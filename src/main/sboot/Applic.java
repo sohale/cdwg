@@ -26,5 +26,4 @@ public class Applic {
             System.out.println(beanName);
         }
     }
-
 }

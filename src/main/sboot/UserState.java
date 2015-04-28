@@ -1,0 +1,39 @@
+package sboot;
+
+import sboot.endpoints.UserStateSummaryView;
+
+/**
+ * Instantaneous state of the user in the game.
+ * * One instance per game? (no FK for game)
+ * Created by sohail on 28/04/15.
+ */
+public class UserState {
+    final static int  NO_CHOICE = -1;
+    //private final long id;
+    //private final String content;
+    private int lastChoice = NO_CHOICE;
+
+    public String getPublicName(){
+        return "Dr S";
+    }
+    public String getPrivateName(){
+        return "Havij";
+    }
+    public boolean isOnScreen(){
+        return false;
+    }
+    public int lastChoice(){
+        return lastChoice;
+    }
+
+    public UserStateSummaryView getSummary(){
+        return new UserStateSummaryView("Name:"+getPublicName()+" OnApp: "+isOnScreen());
+    }
+}
+
+/*
+class UserEntity {
+    private final long uid;
+    private final String name;
+}
+*/
