@@ -12,7 +12,7 @@ public class CassandraTestMain {
      * @param args Command-line arguments; first argument, if provided, is the
      *             host and second argument, if provided, is the port.
      */
-    public static void main(final String[] args) {
+    public static void main1(final String[] args) {
         final CassandraConnector client = new CassandraConnector();
         final String ipAddress = args.length > 0 ? args[0] : "localhost";
         final int port = args.length > 1 ? Integer.parseInt(args[1]) : 9042;
