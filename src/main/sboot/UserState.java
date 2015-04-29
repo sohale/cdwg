@@ -9,8 +9,7 @@ import sboot.endpoints.UserStateSummaryView;
  */
 public class UserState {
     final static int  NO_CHOICE = -1;
-    //private final long id;
-    //private final String content;
+    //private final long id; //todo
     private int lastChoice = NO_CHOICE;
 
     public String getPublicName(){
@@ -27,7 +26,7 @@ public class UserState {
     }
 
     public UserStateSummaryView getSummary(){
-        return new UserStateSummaryView("Name:"+getPublicName()+" OnApp: "+isOnScreen());
+        return new UserStateSummaryView(0,"Name:"+getPublicName()+" OnApp: "+isOnScreen());
     }
 }
 

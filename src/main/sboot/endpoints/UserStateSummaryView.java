@@ -7,7 +7,7 @@ package sboot.endpoints;
 public class UserStateSummaryView {
     final String summary;
     final long uid;
-    UserStateSummaryView(long uid, String summary){
+    public UserStateSummaryView(long uid, String summary){
         this.summary = summary;
         this.uid=uid;
     }
