@@ -26,7 +26,7 @@ public class UserStateReport {
     UserStateSummaryView method_name_does_not_matter(
             //@RequestParam(value="uid", required=false, defaultValue=model.getTheOnlyUser())
             @RequestParam(value="uid", required=true)
-            long uid
+            String uid //todo: long
     ) {
         //gameobj
         //gameobj.getUserState(uid).getSummary();
