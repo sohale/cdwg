@@ -30,7 +30,7 @@ public class UserStateReport {
     ) {
         //gameobj
         //gameobj.getUserState(uid).getSummary();
-        System.out.println(uid)
+        System.out.println(uid);
         return new UserStateSummaryView(uid, counter.incrementAndGet() + String.format(template, uid));
     }
 }
