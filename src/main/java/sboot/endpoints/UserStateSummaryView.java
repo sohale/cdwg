@@ -11,7 +11,7 @@ public class UserStateSummaryView {
         this.summary = summary;
         this.uid=uid;
     }
-    //A Json is the set of public get*() methods.
+    //A 'json' is the set of public get*() methods of a POJO.
     public String getSummary(){
         return this.summary;
     }
