@@ -47,6 +47,18 @@
 		    <!-- <scope>test</scope> -->
 		</dependency>
 
+        <!-- for JSP -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+
     </dependencies>
 
     <properties>
@@ -60,16 +72,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-
-
+                
 				<configuration>
-				  <archive>
-				    <manifest>
 				      <mainClass>sboot.Applic</mainClass>
-				    </manifest>
-				  </archive>
 				</configuration>
-
 
             </plugin>
         </plugins>
