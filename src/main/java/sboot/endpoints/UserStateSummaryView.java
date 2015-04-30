@@ -5,10 +5,14 @@ package sboot.endpoints;
  * Created by sohail on 28/04/15.
  */
 public class UserStateSummaryView {
-    final String summary;
-    final long uid;
+    private final String summary;
+    private final long uid;
     public UserStateSummaryView(long uid, String summary){
         this.summary = summary;
         this.uid=uid;
+    }
+    //A Json is the set of public get*() methods.
+    public String getSummary(){
+        return this.summary;
     }
 }
