@@ -23,17 +23,18 @@ public class UserStateReport {
     UserState model;
 
     @RequestMapping(method = RequestMethod.GET)
+    //@RequestMapping(method = RequestMethod.POST)
     public @ResponseBody
     UserStateSummaryView method_name_does_not_matter(
             //@RequestParam(value="uid", required=false, defaultValue=model.getTheOnlyUser())
             @RequestParam(value="uid", required=true)
             //@RequestParam(value="uid", required=false, defaultValue="-1")
-            String uid //todo: long
+            Long uid //todo: long
     ) {
         //gameobj
         //gameobj.getUserState(uid).getSummary();
         System.out.println("value received: "+uid);
-        long uidl=Long.valueOf(uid);
+        long uidl=Long.valueOf(uid+"");
         System.out.println("step 2: " + uidl);
         UserStateSummaryView u = new UserStateSummaryView(uidl, counter.incrementAndGet() + String.format(template, uid));
         System.out.println("step 3: " + u);

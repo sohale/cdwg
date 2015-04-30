@@ -15,4 +15,7 @@ public class UserStateSummaryView {
     public String getSummary(){
         return this.summary;
     }
+    public long getVLong(){
+        return 5L;
+    }
 }
