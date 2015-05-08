@@ -25,8 +25,15 @@ public class UserState {
         return lastChoice;
     }
 
+    public void setChoice(int choice){
+        this.lastChoice = choice;
+    }
+
     public UserStateSummaryView getSummary(){
         return new UserStateSummaryView(0,"Name:"+getPublicName()+" OnApp: "+isOnScreen());
+    }
+    public UserState(){
+        System.out.println("Constructed: UserState");
     }
 }
 
