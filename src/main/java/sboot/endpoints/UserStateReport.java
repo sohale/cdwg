@@ -18,7 +18,12 @@ public class UserStateReport {
     private static final String template = "User Information and State: %s!";
     private final AtomicLong counter = new AtomicLong();
 
-    //UserState model;
+    UserState model1;
+
+    UserStateReport(){
+    	System.out.println("UserStateReport constructor called");
+    	this.model1 = new UserState();
+    }
 
     @RequestMapping(method = RequestMethod.GET) //Just narrows the http operations! (GET,PUT,POST)
     //It is important!
@@ -31,19 +36,24 @@ public class UserStateReport {
                 Long uid //todo: long
             ,
             //Model model
-            UserState model
+            UserState tempmodel  //Constructed each time
     ) {
         //gameobj
         //gameobj.getUserState(uid).getSummary();
         System.out.println("value received: "+uid);
         long uidl=Long.valueOf(uid+"");
-        System.out.println("model :" + model + "      lastchoice="+model.lastChoice());
+        System.out.println("(model arg: temporary) :" + tempmodel + "      lastchoice="+tempmodel.lastChoice());
         System.out.println("step 2: " + uidl);
-        UserStateSummaryView u = new UserStateSummaryView(uidl, counter.incrementAndGet() + String.format(template, uid));
-        System.out.println("step 3: updating the model state");
-        model.setChoice((int) (uidl + 100));
-        System.out.println("model :" + model + "      lastchoice=" + model.lastChoice());
-        System.out.println("step 4: " + u);
-        return u;
+        UserStateSummaryView ussv = new UserStateSummaryView(uidl, counter.incrementAndGet() + String.format(template, uid));
+        System.out.println("step 3: updating the tempmodel state");
+        tempmodel.setChoice((int) (uidl + 100));
+        System.out.println("tempmodel :" + tempmodel + "      lastchoice=" + tempmodel.lastChoice());
+        System.out.println("step 4: ussv=" + ussv);
+
+        System.out.println("step 5: updating the this.model1 state");
+        this.model1.setChoice((int) (uidl + 100));
+        System.out.println("this.model1 :" + this.model1 + "      lastchoice=" + this.model1.lastChoice());
+
+        return ussv;
     }
 }
