@@ -1,0 +1,111 @@
+userfullstate,
+I chose this name before the REST talk
+
+Renamed folder from javacodegeeks_cassandracouserfullstatennect
+
+
+29 April 2015
+
+Make sure you read this. (Especially customising the port of the endpoint)
+https://spring.io/guides/gs/actuator-service/
+Wed Apr 29 14:08:32 BST 2015
+
+Also this:
+https://spring.io/guides/gs/accessing-data-rest/
+
+spring curl boot get
+https://spring.io/guides/gs/accessing-data-rest/
+
+
+curl GET attempts failed
+
+git done
+
+____________________________________
+commandline WORKED!
+17:40 pm
+29 April 2015
+
+folders are important:
+moved filed into folder java  (src/main/java)
+(also: resources:   src/main/resources )
+
+specified the main (removed the laternative main)
+then:
+mvn clean install
+then
+java -jar gs-spring-boot-0.1-SNAPSHOT.jar
+
+src/main/java
+mvn clean install
+java -jar gs-spring-boot-0.1-SNAPSHOT.jar
+
+
+how to run commandline:
+mvn clean install
+java -jar target/gs-spring-boot-0.1-SNAPSHOT.jar
+
+
+todo: junit
+ver = 4.12
+<scope>  = ?
+
+
+GET could not sen a "long" variable.
+However curl url?uid=2   was fine with String.
+
+In fact the GET method was working correctly.
+30 April 2015
+13:44
+    //A 'json' is the set of public get*() methods of a POJO.
+From stack overflow [David Lotts]: "make sure the POJO you return has get()ers, one for each field."
+
+
+GET does not work with json input.
+
+Long works (instead of long) in GET.
+
+TODO:
+Need to learn:  @PathVariable versus @RequestParam
+TODO:
+@RequestMapping(method=GET, value={"aa","aa/{id}"})
+What does this mean?
+TODO:
+also a usage: curl  -H "acceptjson..."   "localhost:8080/a/b/getName{a,b}"
+___________
+
+We can have (Model model) as the parameters for the "controller" function.
+
+16:18
+@RequestMapping(method = RequestMethod.GET)
+//Just narrows the http operations! (GET,PUT,POST)
+Wrong! This is needed (*). Otherwise:  {"timestamp":1430407860455,"status":404,"error":"Not Found","message":"No message available","path":"/userfullstate"}
+*: When I use @RequestMapping(url) for the class, and not the function. Otherwise, the the URL is not matches to the Function.
+
+@RequestMapping("/userfullstate")
+can be wither for a function or a class.
+
+is
+@ResponseBody
+optional?  (fir the function)
+
+Model:
+"Primarily designed for adding attributes to the model."
+
+But hte object is different each time.
+Besides, where is it constructed? With what parameters?
+
+
+@NotNull
+@Size(max=100)
+
+
+
+
+# MVC
+spring.view.prefix=/WEB-INF/jsp/
+spring.view.suffix=.jsp
+
+#So will be stored in src/main/webapp/WEB-INF/jsp
+
+
