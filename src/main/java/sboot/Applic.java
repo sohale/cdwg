@@ -18,7 +18,8 @@ public class Applic {
                 SpringApplication.run(
                         Applic.class, args);
 
-        System.out.println("Let's inspect the beans provided by Spring Boot:");
+        System.out.println("=================================");
+        System.out.println("Applic: Let's inspect the beans provided by Spring Boot:");
 
         String[] beanNames = ctx.getBeanDefinitionNames();
         Arrays.sort(beanNames);

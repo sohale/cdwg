@@ -36,7 +36,7 @@ public class UserStateReport {
                 Long uid //todo: long
             ,
             //Model model
-            UserState tempmodel  //Constructed each time
+            UserState tempmodel  //Constructed each time. Then what's the point? #Q
     ) {
         //gameobj
         //gameobj.getUserState(uid).getSummary();
