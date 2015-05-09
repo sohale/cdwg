@@ -87,19 +87,17 @@ can be wither for a function or a class.
 
 is
 @ResponseBody
-optional?  (fir the function)
+optional?  (for the function)
 
 Model:
 "Primarily designed for adding attributes to the model."
 
-But hte object is different each time.
-Besides, where is it constructed? With what parameters?
+But the object is different each time.
+Besides, where is it constructed? Using what parameters?
 
 
 @NotNull
 @Size(max=100)
-
-
 
 
 # MVC
@@ -107,5 +105,18 @@ spring.view.prefix=/WEB-INF/jsp/
 spring.view.suffix=.jsp
 
 #So will be stored in src/main/webapp/WEB-INF/jsp
+#ref url=?
 
+
+? May 2015
+Use Long as argument
+
+9 May 2015
+Model can be provided as an arg or as a member of 
+A model as an arg is constructed at each REST request. (then what is the point?)
+Why??? #Q #unresolved
+
+A this.model (in the controlle class) is created once. Appears quite early in logs.
+
+Whic one is injection then?
 
