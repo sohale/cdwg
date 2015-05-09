@@ -118,5 +118,15 @@ Why??? #Q #unresolved
 
 A this.model (in the controlle class) is created once. Appears quite early in logs.
 
-Whic one is injection then?
+Which one is injection then?
+
+
+@RequestMapping(method = RequestMethod.GET)
+public @ResponseBody UserStateSummaryView method_name_does_not_matter
+    (
+            @RequestParam(value="uid", required=true)       Long uid
+            ,
+            UserState tempmodel  //Constructed each time. Then what's the point? #Q
+    )
+    {...}
 
