@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Controller
 @RequestMapping("/userfullstate")
-public class UserStateReport {
+public class UserStateReportController {
 
     private static final String template = "User Information and State: %s!";
     private final AtomicLong counter = new AtomicLong();
@@ -37,8 +37,8 @@ public class UserStateReport {
      */
     UserState model1;
 
-    UserStateReport(){
-    	System.out.println("UserStateReport constructor called");
+    UserStateReportController(){
+    	System.out.println("UserStateReportController constructor called");
     	//this.model1 = new UserState();
     }
 
@@ -51,20 +51,20 @@ public class UserStateReport {
             //@RequestParam(value="uid", required=false, defaultValue="-1")
             @RequestParam(value="uid", required=true)
                 Long uid //todo: long
-            ,
-            //Model model
-            UserState tempmodel  //Constructed each time. Then what's the point? #Q
+          //  ,
+          //  //Model model
+          //  UserState tempmodel  //Constructed each time. Then what's the point? #Q
     ) {
         //gameobj
         //gameobj.getUserState(uid).getSummary();
         System.out.println("value received: "+uid);
         long uidl=Long.valueOf(uid+"");
-        System.out.println("(model arg: temporary) :" + tempmodel + "      lastchoice="+tempmodel.lastChoice());
+        //System.out.println("(model arg: temporary) :" + tempmodel + "      lastchoice="+tempmodel.lastChoice());
         System.out.println("step 2: " + uidl);
         UserStateSummaryView ussv = new UserStateSummaryView(uidl, counter.incrementAndGet() + String.format(template, uid));
-        System.out.println("step 3: updating the tempmodel state");
-        tempmodel.setChoice((int) (uidl + 100));
-        System.out.println("tempmodel :" + tempmodel + "      lastchoice=" + tempmodel.lastChoice());
+        //System.out.println("step 3: updating the tempmodel state");
+        //tempmodel.setChoice((int) (uidl + 100));
+        //System.out.println("tempmodel :" + tempmodel + "      lastchoice=" + tempmodel.lastChoice());
         System.out.println("step 4: ussv=" + ussv);
 
         System.out.println("step 5: updating the this.model1 state");

@@ -1,5 +1,6 @@
 package sboot;
 
+import org.springframework.stereotype.Component;
 import sboot.endpoints.UserStateSummaryView;
 
 /**
@@ -7,6 +8,7 @@ import sboot.endpoints.UserStateSummaryView;
  * * One instance per game? (no FK for game)
  * Created by sohail on 28/04/15.
  */
+@Component
 public class UserState {
     final static int  NO_CHOICE = -1;
     //private final long id; //todo
