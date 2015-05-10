@@ -68,8 +68,12 @@ public class UserStateReportController {
         System.out.println("step 4: ussv=" + ussv);
 
         System.out.println("step 5: updating the this.model1 state");
-        this.model1.setChoice((int) (uidl + 100));
-        System.out.println("this.model1 :" + this.model1 + "      lastchoice=" + this.model1.lastChoice());
+        //this.model1.getUserState(uidl).setChoice((int) (uidl + 100));
+        //this.model1.getUserState(uidl).setChoice( this.model1.getUserState(uidl).getChoice());
+        UserState us = this.model1.getUserState(uidl);
+        us.setChoice(us.lastChoice() + 1);
+        //System.out.println("this.model1 :" + this.model1 + "      lastchoice=" + this.model1.lastChoice());
+        System.out.println("this.model1 :" + this.model1 + "      lastchoice=" + us.lastChoice());
 
         return ussv;
     }

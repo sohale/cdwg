@@ -5,16 +5,14 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
-/**
- * Created by sohail on 28/04/15.
- */
+
 @Component
 public class GameInstance {
 
     @Value("${graph.shape}")
     public static GameInstance createGameInstance(String graphShape) {
         GameInstance g= new GameInstance(graphShape);
-        UserState us = new UserState();
+        UserState us = new UserState("Jack");
         g.simple(us);
         return g;
     }
@@ -57,6 +55,9 @@ public class GameInstance {
         getDate() //TimeStarted
     */
 
+    public UserState getUserState(Long uid){
+        assert uid==7;
+    }
 }
 
 
