@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import sboot.GameInstance;
 import sboot.UserState;
 import sboot.endpoints.UserStateSummaryView;
 
@@ -33,9 +34,8 @@ public class UserStateReportController {
      Solutions: To make the Bean using:
      1-Make a @Configuration class. (very flexible and customisable) (Uses @Bean in a method)
      2-define @Component when defining the class (1 instance only).
-
      */
-    UserState model1;
+    GameInstance model1; //Todo: rename to GameState
 
     UserStateReportController(){
     	System.out.println("UserStateReportController constructor called");

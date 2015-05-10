@@ -24,7 +24,7 @@ public class RESTEndPoint1 {
     @RequestMapping(method=RequestMethod.GET)
     public @ResponseBody
     GameInstance myShowGameInfo(@RequestParam(value="name", required=false, defaultValue="Stranger") String name) {
-        return new GameInstance(counter.incrementAndGet(), String.format(template, name));
+        return GameInstance.createGameInstance(counter.incrementAndGet(), String.format(template, name));
     }
 
 }

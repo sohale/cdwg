@@ -8,17 +8,19 @@ import sboot.endpoints.UserStateSummaryView;
  * * One instance per game? (no FK for game)
  * Created by sohail on 28/04/15.
  */
-@Component
 public class UserState {
     final static int  NO_CHOICE = -1;
     //private final long id; //todo
     private int lastChoice = NO_CHOICE;
 
+    private String name;
+
     public String getPublicName(){
-        return "Dr S";
+
+        return this.name;
     }
     public String getPrivateName(){
-        return "Havij";
+        return this.name;
     }
     public boolean isOnScreen(){
         return false;
@@ -34,9 +36,23 @@ public class UserState {
     public UserStateSummaryView getSummary(){
         return new UserStateSummaryView(0,"Name:"+getPublicName()+" OnApp: "+isOnScreen());
     }
-    public UserState(){
+
+    private UserEntity userEntity=null;
+    public UserState(String name){
+        //this.userEntity = //new UserEntity
+        this.name = name;
         System.out.println("Constructed: UserState");
     }
+    public static UserState createUserStateInstance() { // see below: newJoins
+        return new UserState("Jack");
+    }
+
+    //Todo: Howe to identify a unique user? WHat is the primary key: when adding a "new" user? phone no? an id number in the DB?
+    //UserState is not a User class. A Userclass is like a J2EE entity.
+    //todo: Factory
+    //public static UserState newJoins(UserEntity ue){
+    //    return UserState(ue);
+    //}
 }
 
 /*
@@ -45,3 +61,4 @@ class UserEntity {
     private final String name;
 }
 */
+
