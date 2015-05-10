@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import sboot.UserState;
 import sboot.endpoints.UserStateSummaryView;
 
+import javax.annotation.Resource;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Controller
@@ -18,11 +19,27 @@ public class UserStateReport {
     private static final String template = "User Information and State: %s!";
     private final AtomicLong counter = new AtomicLong();
 
+    @Resource
+    /*
+    Using "@Resource" by itself (without another bean) causes:
+        Injection of resource dependencies failed;
+        No qualifying bean of type [sboot.UserState] found for dependency:
+        expected at least 1 bean which qualifies as autowire candidate
+        for this dependency.
+        Dependency annotations:
+        {@javax.annotation.Resource(
+           shareable=true, mappedName=, description=, name=, type=class java.lang.Object, lookup=, authenticationType=CONTAINER
+           )}
+     Solutions: To make the Bean using:
+     1-Make a @Configuration class. (very flexible and customisable) (Uses @Bean in a method)
+     2-define @Component when defining the class (1 instance only).
+
+     */
     UserState model1;
 
     UserStateReport(){
     	System.out.println("UserStateReport constructor called");
-    	this.model1 = new UserState();
+    	//this.model1 = new UserState();
     }
 
     @RequestMapping(method = RequestMethod.GET) //Just narrows the http operations! (GET,PUT,POST)
