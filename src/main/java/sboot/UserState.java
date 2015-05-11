@@ -16,16 +16,15 @@ public class UserState {
     private String name;
 
     public String getPublicName(){
-
         return this.name;
     }
     public String getPrivateName(){
         return this.name;
     }
-    public boolean isOnScreen(){
+    public boolean isOnAppScreen(){
         return false;
     }
-    public int lastChoice(){
+    public Integer lastChoice(){
         return lastChoice;
     }
 
@@ -33,9 +32,9 @@ public class UserState {
         this.lastChoice = choice;
     }
 
-    public UserStateSummaryView getSummary(){
-        return new UserStateSummaryView(0,"Name:"+getPublicName()+" OnApp: "+isOnScreen());
-    }
+    //public UserStateSummaryView getSummary(){
+    //    return new UserStateSummaryView(0,"Name:"+getPublicName()+" OnApp: "+isOnAppScreen());
+    //}
 
     private UserEntity userEntity=null;
     public UserState(String name){

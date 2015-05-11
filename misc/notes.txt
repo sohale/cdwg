@@ -118,7 +118,7 @@ Model can be provided as an arg or as a member of
 A model as an arg is constructed at each REST request. (then what is the point?)
 Why??? #Q #unresolved
 
-A this.model (in the controlle class) is created once. Appears quite early in logs.
+A this.model (in the controller class) is created once. Appears quite early in logs.
 
 Which one is injection then?
 
@@ -131,6 +131,26 @@ public @ResponseBody UserStateSummaryView method_name_does_not_matter
             UserState tempmodel  //Constructed each time. Then what's the point? #Q
     )
     {...}
+
+
+?
+    @Resource
+    /*
+    Using "@Resource" by itself (without another bean) causes:
+        Injection of resource dependencies failed;
+        No qualifying bean of type [sboot.UserState] found for dependency:
+        expected at least 1 bean which qualifies as autowire candidate
+        for this dependency.
+        Dependency annotations:
+        {@javax.annotation.Resource(
+           shareable=true, mappedName=, description=, name=, type=class java.lang.Object, lookup=, authenticationType=CONTAINER
+           )}
+     Solutions: To make the Bean using:
+     1-Make a @Configuration class. (very flexible and customisable) (Uses @Bean in a method)
+     2-define @Component when defining the class (1 instance only).
+     */
+    GameInstance model1; //Todo: rename to GameState
+
 
 11 May 2015:
 ------------
@@ -167,3 +187,6 @@ $ echo;curl localhost:8080/gamestate;echo;echo
 
 this.gameinstance= sboot.GameInstance@3e94b979
 
+The getters provide all needed (also the summary and the view).
+is* is a getter.
+How to define an int (primitive type) getter?
