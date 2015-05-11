@@ -142,3 +142,14 @@ public @ResponseBody UserStateSummaryView method_name_does_not_matter
 `@Controller`
 is typically used in combination with annotated handler methods based on the
  * {@link org.springframework.web.bind.annotation.RequestMapping} annotation.
+
+`java -ea` enables assert
+mvn clean install ;blines ;java -ea -jar target/gs-spring-boot-0.1-SNAPSHOT.jar
+
+Works. 16:25 (compiles without error)
+Both @Value and @Bean are required.
+Q: How to make a Bean that is Injected in properties of two @Components?
+
+echo;curl localhost:8080/userfullstate?uid=2;echo;echo     #exception
+echo;curl localhost:8080/userfullstate?uid=7;echo;echo     #works fine. cool.
+echo;curl localhost:8080/gamestate;echo;echo               #empty output

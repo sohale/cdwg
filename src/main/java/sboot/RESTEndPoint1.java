@@ -29,7 +29,7 @@ public class RESTEndPoint1 {
     public @ResponseBody
     GameInstance myShowGameInfo(@RequestParam(value="name", required=false, defaultValue="Stranger") String name) {
         //return GameInstance.createGameInstance(counter.incrementAndGet(), String.format(template, name));
-        return this.gameinstance;
+        return this.gameinstance; //writes nothing in curl
     }
 
 }

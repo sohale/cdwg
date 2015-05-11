@@ -76,6 +76,9 @@
 
 				<configuration>
 				      <mainClass>sboot.Applic</mainClass>
+                      <!-- Necessary for taking _assert_ commands seriously  -Xdebug  -enableassertions -->
+                      <jvmArguments>
+                      </jvmArguments>
 				</configuration>
 
             </plugin>
