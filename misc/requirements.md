@@ -5,8 +5,8 @@ Low latency
 -----------
 The message (event) of a _client_'s *choice* should be received by his adjacent-peer (another _client_) with very low latency using common internet connections.
 
-Decisions
-=========
+Design Decisions
+================
 Use both client-client and client-server communication.
 
 1. Use a slow connection between the client (app) and server. It will be using REST and will be queued.
@@ -58,7 +58,7 @@ The web App is ready for conducting experiments with public users.
 
 
 |Milestones         |Target Date     |Payment |                                                                         Deliverable: |
-|------------------:|---------------:|-------:|
+|------------------:|---------------:|-------:|-------------------------------------------------------------------------------------:|
 |MS1: Project Start | Start date     | £5,000 | Contract signed, design documents delivered to Wide IO Consulting Ltd, scope and requirements of project defined.|
 |MS2: Web Prototype | 4 weeks        | £4,500 | First prototype is implemented as a simple website with main communication functionalities in their basic form: Response Collection, Web-to-Backend Communication, User-to-User Communication. Experiment parameters and the graph are set by the Developer|
 |MS3: web App Alpha | 8 weeks        | £4,500 | First working web App with an intermediate interface, fully functional low-latency and reliable communication between users (communication latency is measured). One Stimulus Presentation. Synchrony of stimulus presentation. Experimenter’s Control panel is minimal (text).|
