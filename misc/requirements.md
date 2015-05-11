@@ -57,14 +57,14 @@ The web App is ready for conducting experiments with public users.
 £2,500
 
 
-|Milestones         |Target Date     |Payment |                                                                         Deliverable: |
-|------------------:|---------------:|-------:|-------------------------------------------------------------------------------------:|
-|MS1: Project Start | Start date     | £5,000 | Contract signed, design documents delivered to Wide IO Consulting Ltd, scope and requirements of project defined.|
-|MS2: Web Prototype | 4 weeks        | £4,500 | First prototype is implemented as a simple website with main communication functionalities in their basic form: Response Collection, Web-to-Backend Communication, User-to-User Communication. Experiment parameters and the graph are set by the Developer|
-|MS3: web App Alpha | 8 weeks        | £4,500 | First working web App with an intermediate interface, fully functional low-latency and reliable communication between users (communication latency is measured). One Stimulus Presentation. Synchrony of stimulus presentation. Experimenter’s Control panel is minimal (text).|
-|MS4: web App Beta  | 12 Weeks       | £4,500 | Fully functional web App. User registration and authentication. Test run with invited users.|
-|MS5: Completed     | 16 weeks       | £5,000 | Production quality web App. The interface design is complete. Quality control and tests passes. Troubleshooting.|
-|MS6: Web App Gold  | 18 weeks       | £2,500 | The web App is ready for conducting experiments with public users. |
+|   | Milestone     |Target Date     |        |                                                                         Deliverable: |
+|--:|--------------:|---------------:|-------:|-------------------------------------------------------------------------------------:|
+|MS1| Project Start | Start date     |  5,000 | Contract signed, design documents delivered to Wide IO Consulting Ltd, scope and requirements of project defined.|
+|MS2| Web Prototype | 4 weeks        |  4,500 | First prototype is implemented as a simple website with main communication functionalities in their basic form: Response Collection, Web-to-Backend Communication, User-to-User Communication. Experiment parameters and the graph are set by the Developer|
+|MS3| web App Alpha | 8 weeks        |  4,500 | First working web App with an intermediate interface, fully functional low-latency and reliable communication between users (communication latency is measured). One Stimulus Presentation. Synchrony of stimulus presentation. Experimenter’s Control panel is minimal (text).|
+|MS4| web App Beta  | 12 Weeks       |  4,500 | Fully functional web App. User registration and authentication. Test run with invited users.|
+|MS5| Completed     | 16 weeks       |  5,000 | Production quality web App. The interface design is complete. Quality control and tests passes. Troubleshooting.|
+|MS6| Web App Gold  | 18 weeks       |  2,500 | The web App is ready for conducting experiments with public users. |
 
 
 The prices above are stated in Pounds Sterling [GBP].
