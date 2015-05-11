@@ -19,8 +19,8 @@ import javax.annotation.Resource;
 public class RESTEndPoint1 {
     //the name was: HelloWorldController
 
-    //@Resource
-    GameInstance gameinstance=null; //Todo: reference to the same main Game bean
+    @Resource
+    GameInstance gameinstance; //Todo: reference to the same main Game bean
 
     //private static final String template = "Hello, %s!";
     //private final AtomicLong counter = new AtomicLong();
@@ -29,7 +29,8 @@ public class RESTEndPoint1 {
     public @ResponseBody
     GameInstance myShowGameInfo(@RequestParam(value="name", required=false, defaultValue="Stranger") String name) {
         //return GameInstance.createGameInstance(counter.incrementAndGet(), String.format(template, name));
+        System.out.print("this.gameinstance= ");
+        System.out.println(this.gameinstance);
         return this.gameinstance; //writes nothing in curl
     }
-
 }

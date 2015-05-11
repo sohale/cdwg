@@ -3,6 +3,7 @@ package sboot;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -74,6 +75,14 @@ public class GameInstance {
         //assert this.players.size()==1; //Works only in this case
         //return this.players.get(0);
         return this.players.get(uid); //why is get(arg : Object)?
+    }
+
+    public int getPlayerCount(){
+        return this.players.size();
+    }
+    public Collection<UserState> getPlayers() {
+        //getFirstPlayerName(){
+        return this.players.values();
     }
 }
 

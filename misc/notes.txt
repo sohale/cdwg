@@ -153,3 +153,17 @@ Q: How to make a Bean that is Injected in properties of two @Components?
 echo;curl localhost:8080/userfullstate?uid=2;echo;echo     #exception
 echo;curl localhost:8080/userfullstate?uid=7;echo;echo     #works fine. cool.
 echo;curl localhost:8080/gamestate;echo;echo               #empty output
+
+
+Is UserState a Bean? Or is it part of the GameInstance (getter)
+
+UserState is probably Not a bean. [DesignDecision]
+
+Works!
+$ echo;curl localhost:8080/gamestate;echo;echo
+
+{"players":[{"publicName":"Jack","summary":{"summary":"Name:Jack OnApp: false","vlong":5},"privateName":"Jack","onScreen":false}],"playerCount":1}
+
+
+this.gameinstance= sboot.GameInstance@3e94b979
+
