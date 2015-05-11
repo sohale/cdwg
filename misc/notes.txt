@@ -109,9 +109,11 @@ spring.view.suffix=.jsp
 
 
 ? May 2015
+----------
 Use Long as argument
 
 9 May 2015
+----------
 Model can be provided as an arg or as a member of 
 A model as an arg is constructed at each REST request. (then what is the point?)
 Why??? #Q #unresolved
@@ -130,3 +132,13 @@ public @ResponseBody UserStateSummaryView method_name_does_not_matter
     )
     {...}
 
+11 May 2015:
+------------
+`@Service` is a subtype of @Component
+@Service: "Service", originally defined by Domain-Driven
+           * Design (Evans, 2003) as "an operation offered as an interface that stands alone in the
+           * model, with no encapsulated state." []
+
+`@Controller`
+is typically used in combination with annotated handler methods based on the
+ * {@link org.springframework.web.bind.annotation.RequestMapping} annotation.

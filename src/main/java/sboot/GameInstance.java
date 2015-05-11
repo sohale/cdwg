@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-@Component
+//@Component("TheGame") //Requires a default constructor
 public class GameInstance {
 
     @Value("${graph.shape}")
