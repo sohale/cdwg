@@ -201,3 +201,45 @@ Specs and Concepts:
 
 Specifications are business layer test cases which can also act as your feature documentation.
     [http://getgauge.io/documentation/user/current/specifications/README.html]
+
+
+going for : Mail
+
+
+On @Bean methods:
+A @Bean (method) will be executed once even if called multiple times. (Any @Bean in a @Configuration)
+If a @BEan in @Component class, it will be called 3 times ( N+1 times)!
+
+parameters of @Bean methods: are injected.(?)
+
+alternatives to singleton @Beans: sessions scope, request scope.
+
+* A controller should not be void?
+I only used a @RequestMapping(...) without @ResponseBody
+
+> Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Circular view path [choose]: would dispatch back to the current handler URL [/choose] again. Check your ViewResolver setup!
+> (Hint: This may be the result of an unspecified view, due to default view name generation.)
+> ] with root cause
+
+@ResponseBody:
+Annotation that indicates a method return value should be bound to the web response body.
+.. * added on "type level" vs. added on the "method level".
+** @see RequestBody
+** @see RestController
+
+@RestController = a @Controller class where @RequestMapping  methods => @ResponseBody
+But is "/choose" a REST Controller?
+
+Works!
+>$ curl localhost:8080/choose?uid=7\&choice=1
+> 2015-05-12 17:18:20.689  INFO 21077 --- [nio-8080-exec-5] s.e.ChooseOnPushButtonController         : User '7' chose 1
+
+The method's return type is "@ResponseBody void"
+
+todo: set the timestamp of last change when "/choose".
+
+@ResponseBody void
+
+git:commit summary:
+"the /choose endpoint added and works, java mail sender imported but not used. @ResponseBody void is type annotation. It is required for the endpoint. But is it REST?"
+

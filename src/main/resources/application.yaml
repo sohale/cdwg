@@ -1,2 +1,13 @@
 graph:
-  shape: clique
+    shape: clique
+
+org:
+    crowd:
+        bcw:
+            prototype: true
+            dev: true
+
+spring:
+    mail:
+        host: smtp.gmail.com
+

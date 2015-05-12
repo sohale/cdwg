@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 //@RequestMapping("/controller_rest_endpoint1")
 @Controller
 @RequestMapping("/gamestate")
-public class RESTEndPoint1 {
+public class GameStateRESTEndPoint1 {
     //the name was: HelloWorldController
 
     @Resource
@@ -26,8 +26,9 @@ public class RESTEndPoint1 {
     //private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping(method=RequestMethod.GET)
-    public @ResponseBody
-    GameInstance myShowGameInfo(@RequestParam(value="name", required=false, defaultValue="Stranger") String name) {
+    public
+    @ResponseBody GameInstance //Annotates the return _type_
+    myShowGameInfo(@RequestParam(value="name", required=false, defaultValue="Stranger") String name) {
         //return GameInstance.createGameInstance(counter.incrementAndGet(), String.format(template, name));
         System.out.print("this.gameinstance= ");
         System.out.println(this.gameinstance);
