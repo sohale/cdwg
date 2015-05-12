@@ -43,7 +43,7 @@ public class BcwConfig {
                 helper.setTo("received@website.com");
             String plainText = "test";
             helper.setText(plainText);
-            msender.send();
+            msender.send(m?);
         } catch (MessagingException e) {
             e.printStackTrace();
         }
