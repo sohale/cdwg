@@ -190,3 +190,14 @@ this.gameinstance= sboot.GameInstance@3e94b979
 The getters provide all needed (also the summary and the view).
 is* is a getter.
 How to define an int (primitive type) getter?
+
+
+12 May 2015
+Specs and Concepts:
+    Every spec must contain one or more scenarios. []
+    Every spec can be marked with labels using tags. []
+    Every scenario has multiple steps.
+    [http://getgauge.io/documentation/user/current/specifications/scenarios.html]
+
+Specifications are business layer test cases which can also act as your feature documentation.
+    [http://getgauge.io/documentation/user/current/specifications/README.html]
