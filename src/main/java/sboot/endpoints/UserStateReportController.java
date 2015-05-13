@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import sboot.GameInstance;
+import sboot.TimestampProvider;
 import sboot.UserState;
 import sboot.endpoints.UserStateSummaryView;
 
@@ -42,6 +43,9 @@ public class UserStateReportController {
     	//this.model1 = new UserState();
     }
 
+    @Resource
+    public TimestampProvider timer;
+
     @RequestMapping(method = RequestMethod.GET) //Just narrows the http operations! (GET,PUT,POST)
     //It is important!
     //@RequestMapping(method = RequestMethod.POST)
@@ -55,6 +59,8 @@ public class UserStateReportController {
           //  //Model model
           //  UserState tempmodel  //Constructed each time. Then what's the point? #Q
     ) {
+        System.out.println("---------------------"+this.timer);
+
         //gameobj
         //gameobj.getUserState(uid).getSummary();
         System.out.println("value received: "+uid);
@@ -71,7 +77,7 @@ public class UserStateReportController {
         //this.model1.getUserState(uidl).setChoice((int) (uidl + 100));
         //this.model1.getUserState(uidl).setChoice( this.model1.getUserState(uidl).getChoice());
         UserState us = this.model1.getUserState(uidl);
-        us.setChoice(us.lastChoice() + 1);
+        us.setChoice(us.lastChoice() + 1, null); //todo: null is bad
         //System.out.println("this.model1 :" + this.model1 + "      lastchoice=" + this.model1.lastChoice());
         System.out.println("this.model1 :" + this.model1 + "      lastchoice=" + us.lastChoice());
 

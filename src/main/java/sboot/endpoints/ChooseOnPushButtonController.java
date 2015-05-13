@@ -3,6 +3,7 @@ package sboot.endpoints;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +13,7 @@ import sboot.GameInstance;
 import sboot.TimestampProvider;
 
 import javax.annotation.Resource;
+import java.time.ZonedDateTime;
 
 /**
  * Created by sohail on 12/05/15.
@@ -44,9 +46,11 @@ public class ChooseOnPushButtonController {
             Integer choice
         )
     {
-        log.info(String.format("User '%1$s' chose %2$s at %3$s",uid+"",choice+"",timer.getNow()+""));
+        System.out.println("choooose="+this.timer);
+        ZonedDateTime ts = timer.getNow();
+        log.info(String.format("User '%1$s' chose %2$s at %3$s",uid+"",choice+"",ts+""));
 
-        this.gameModel.getUserState(uid).setChoice(choice);
+        this.gameModel.getUserState(uid).setChoice(choice, ts);
     }
 
 }

@@ -1,7 +1,18 @@
 package sboot;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import sboot.endpoints.UserStateSummaryView;
+
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import javax.annotation.Resource;
+
 
 /**
  * Instantaneous state of the user in the game.
@@ -28,9 +39,44 @@ public class UserState {
         return lastChoice;
     }
 
-    public void setChoice(int choice){
-        this.lastChoice = choice;
+    private ZonedDateTime lastTimeSet_REST;
+    private ZonedDateTime lastTimeSet_HERE; //We cannot have this because we don't have access to the timer the bean here.
+    //private ZonedDateTime lastTimeSet_FRONTEND;
+    //private ZonedDateTime lastTimeSet_RECEIVED_FROM_SERVER;
+    //private ZonedDateTime lastTimeSet_RECEIVED_FROM_WEBSOCKETS;
+
+    public ZonedDateTime getLastTimeSet(){
+        return this.lastTimeSet_REST;
     }
+
+    //@Resource //Problem: is not injected.
+    //public TimestampProvider timer; //timeProvider; //timerBean
+
+
+    public void setChoice(int choice, ZonedDateTime ts){
+        //todo: only set when changed?
+        if (this.lastChoice == choice)
+            log.warn("this.lastChoice == choice == "+choice);
+        this.lastChoice = choice;
+        this.lastTimeSet_REST = ts;
+        //System.out.println("*****this.timer="+this.timer);
+        //this.lastTimeSet_HERE = this.timer.getNow();
+        this.lastTimeSet_HERE = ZonedDateTime.now();
+        //ZonedDateTime lastTimeSet_HERE=ZonedDateTime.now();
+
+        String timediff_msec;
+        if (this.lastTimeSet_REST != null)
+            timediff_msec  = ChronoUnit.MILLIS.between(this.lastTimeSet_REST, this.lastTimeSet_HERE)+"";
+        else
+            timediff_msec = "N/A";
+        log.info(timediff_msec + " (msec) = "+
+                 this.lastTimeSet_HERE + " minus " + this.lastTimeSet_REST );
+        this.lastTimeSet_HERE=lastTimeSet_HERE;
+
+    }
+
+    private static final Log log = LogFactory.getLog(UserState.class);
+
 
     //public UserStateSummaryView getSummary(){
     //    return new UserStateSummaryView(0,"Name:"+getPublicName()+" OnApp: "+isOnAppScreen());
