@@ -10,6 +10,9 @@ import org.springframework.context.ApplicationContext;
 // What is an actuator?
 // In Spring, REST endpoints are just Spring MVC controllers.
 
+
+//@EnableWebMvc //implicit
+// @SpringBootApplication = @Configuration + @EnableAutoConfiguration + @EnableWebMvc (?) + @ComponentScan
 @SpringBootApplication
 public class Applic {
 
@@ -17,7 +20,7 @@ public class Applic {
         ApplicationContext ctx =
                 SpringApplication.run(
                         Applic.class, args);
-
+        /*
         System.out.println("=================================");
         System.out.println("Applic: Let's inspect the beans provided by Spring Boot:");
 
@@ -26,5 +29,6 @@ public class Applic {
         for (String beanName : beanNames) {
             System.out.println(beanName);
         }
+        */
     }
 }

@@ -270,3 +270,32 @@ this.lastTimeSet_HERE.getChronology() = ?
 
 A bean can be injected twice.
 But a POJO (that ias not a @Component) cannot use @Property field (if uses, it is not injected).
+
+
+Security is done by this:
+    @Configuration
+    @EnableWebMvcSecurity
+    public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+Requires an LDAP server: ApacheDS
+The ldapAuthentication() method configures (also logs in?)
+
+LDIF = LDIF (LDAP Data Interchange Format)
+We put an *ldif file in resources.
+Using LDIF is not for production.
+
+Error:
+2015-05-13 20:17:14.146 ERROR 5406 --- [ost-startStop-1] o.a.d.s.s.r.DefaultAttributeTypeRegistry : attributeType w/ OID 2.5.4.16 not registered!
+
+This page says just ignore this error:
+> DefaultAttributeTypeRegistry : attributeType w/ OID 2.5.4.16 not registered!
+https://github.com/bsnyder/spring-security-demo/blob/master/README.md
+also:
+NormalizationInterceptor     : The RDN 'cn=quote\"guy' is not present in the entry
+
+todo: learn about LDAP
+LDAP = Lightweight Directory Access Protocol
+a layer above the TCP/IP stack.
+
+* https://msdn.microsoft.com/en-us/library/aa367008%28v=vs.85%29.aspx
+* ...
