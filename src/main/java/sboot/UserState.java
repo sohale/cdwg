@@ -71,7 +71,6 @@ public class UserState {
             timediff_msec = "N/A";
         log.info(timediff_msec + " (msec) = "+
                  this.lastTimeSet_HERE + " minus " + this.lastTimeSet_REST );
-        this.lastTimeSet_HERE=lastTimeSet_HERE;
 
     }
 

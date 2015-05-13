@@ -81,9 +81,14 @@ public class GameInstance {
     public int getPlayerCount(){
         return this.players.size();
     }
+
     public Collection<UserState> getPlayers() {
         //getFirstPlayerName(){
         return this.players.values();
+    }
+
+    public UserState getPlayer(long uid){
+        return this.players.get(uid);
     }
 }
 

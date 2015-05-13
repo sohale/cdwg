@@ -20,6 +20,7 @@ public class UserStateReportController {
 
     private static final String template = "User Information and State: %s!";
     private final AtomicLong counter = new AtomicLong();
+    //counter.incrementAndGet()
 
     @Resource
     /*
@@ -49,8 +50,9 @@ public class UserStateReportController {
     @RequestMapping(method = RequestMethod.GET) //Just narrows the http operations! (GET,PUT,POST)
     //It is important!
     //@RequestMapping(method = RequestMethod.POST)
-    public @ResponseBody
-    UserStateSummaryView method_name_does_not_matter(
+    public
+    @ResponseBody UserState //UserStateSummaryView
+    method_name_does_not_matter(
             //@RequestParam(value="uid", required=false, defaultValue=model.getTheOnlyUser())
             //@RequestParam(value="uid", required=false, defaultValue="-1")
             @RequestParam(value="uid", required=true)
@@ -67,20 +69,24 @@ public class UserStateReportController {
         long uidl=Long.valueOf(uid+"");
         //System.out.println("(model arg: temporary) :" + tempmodel + "      lastchoice="+tempmodel.lastChoice());
         System.out.println("step 2: " + uidl);
-        UserStateSummaryView ussv = new UserStateSummaryView(uidl, counter.incrementAndGet() + String.format(template, uid));
+        //UserStateSummaryView ussv = new UserStateSummaryView(uidl, counter.incrementAndGet() + String.format(template, uid));
         //System.out.println("step 3: updating the tempmodel state");
         //tempmodel.setChoice((int) (uidl + 100));
         //System.out.println("tempmodel :" + tempmodel + "      lastchoice=" + tempmodel.lastChoice());
-        System.out.println("step 4: ussv=" + ussv);
+        //System.out.println("step 4: ussv=" + ussv);
 
         System.out.println("step 5: updating the this.model1 state");
         //this.model1.getUserState(uidl).setChoice((int) (uidl + 100));
         //this.model1.getUserState(uidl).setChoice( this.model1.getUserState(uidl).getChoice());
         UserState us = this.model1.getUserState(uidl);
+        /*
         us.setChoice(us.lastChoice() + 1, null); //todo: null is bad
+        */
         //System.out.println("this.model1 :" + this.model1 + "      lastchoice=" + this.model1.lastChoice());
         System.out.println("this.model1 :" + this.model1 + "      lastchoice=" + us.lastChoice());
 
-        return ussv;
+        //return ussv;
+        //return "Don't use this";
+        return this.model1.getPlayer(uid);
     }
 }
