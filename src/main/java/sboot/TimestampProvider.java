@@ -10,7 +10,7 @@ import java.time.ZonedDateTime;
 /**
  * Created by sohail on 13/05/15.
  */
-@Qualifier("b")
+//@Qualifier("b")
 @Component
 public class TimestampProvider {
     /**
