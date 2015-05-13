@@ -243,3 +243,15 @@ todo: set the timestamp of last change when "/choose".
 git:commit summary:
 "the /choose endpoint added and works, java mail sender imported but not used. @ResponseBody void is type annotation. It is required for the endpoint. But is it REST?"
 
+
+Who sets the timestamp (for the vote/choice)? When is it set?
+At frontend? the caller of the rest? The REST method?
+How many timestamps should we save?
+How many timestamps can exist (in total)?
+
+Port changed:
+mvn clean install ;blines ;java -ea -jar target/gs-spring-boot-0.1-SNAPSHOT.jar --server.port=8181 &
+
+Works!
+$ curl localhost:8181/choose?uid=7\&choice=7
+2015-05-13 13:35:45.876  INFO 28969 --- [nio-8181-exec-5] s.e.ChooseOnPushButtonController         : User '7' chose 7 at 2015-05-13T13:35:45.876

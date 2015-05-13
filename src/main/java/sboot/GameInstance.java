@@ -70,6 +70,7 @@ public class GameInstance {
         getDate() //TimeStarted
     */
 
+    //Problem: UserState (e.g. in getUserSpace) is also called Player (e.g. in getPlayerCount) :inconsistency in names.
     public UserState getUserState(Long uid){
         //assert uid==7;
         //assert this.players.size()==1; //Works only in this case

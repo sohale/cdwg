@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import sboot.GameInstance;
+import sboot.TimestampProvider;
 
 import javax.annotation.Resource;
 
@@ -21,6 +22,9 @@ public class ChooseOnPushButtonController {
 
     @Resource
     GameInstance gameModel;
+
+    @Resource
+    TimestampProvider timer;
 
     private static final Log log = LogFactory.getLog(ChooseOnPushButtonController.class);
 
@@ -40,7 +44,9 @@ public class ChooseOnPushButtonController {
             Integer choice
         )
     {
-        log.info(String.format("User '%1$s' chose %2$s ",uid+"",choice+""));
+        log.info(String.format("User '%1$s' chose %2$s at %3$s",uid+"",choice+"",timer.getNow()+""));
+
+        this.gameModel.getUserState(uid).setChoice(choice);
     }
 
 }
