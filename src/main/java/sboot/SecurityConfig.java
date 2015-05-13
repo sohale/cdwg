@@ -16,12 +16,14 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        System.out.println("------------------------before configure");
         http
                 .authorizeRequests()
                 .antMatchers("/css/**").permitAll()
                 .anyRequest().fullyAuthenticated()
                 .and()
                 .formLogin();
+        System.out.println("------------------------after configure");
     }
 
 
@@ -35,11 +37,13 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 
         @Override
         public void init(AuthenticationManagerBuilder auth) throws Exception {
+            System.out.println("------------------------before auth");
             auth
                     .ldapAuthentication()
                     .userDnPatterns("uid={0},ou=people")
                     .groupSearchBase("ou=groups")
                     .contextSource().ldif("classpath:test-server.ldif");
+            System.out.println("------------------------after auth");
             //searches
             // uid={0},ou=people,dc=springframework,dc=org
             // in the LDAP server.

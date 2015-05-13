@@ -39,7 +39,7 @@ public class UserStateReportController {
      */
     GameInstance model1; //Todo: rename to GameState
 
-    UserStateReportController(){
+    public UserStateReportController(){
     	System.out.println("UserStateReportController constructor called");
     	//this.model1 = new UserState();
     }

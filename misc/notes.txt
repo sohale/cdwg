@@ -299,3 +299,13 @@ a layer above the TCP/IP stack.
 
 * https://msdn.microsoft.com/en-us/library/aa367008%28v=vs.85%29.aspx
 * ...
+
+
+Apache Directory Server
+http://en.wikipedia.org/wiki/Apache_Directory
+
+LDIF editor
+DSML editor
+
+Security ldif error.
+I also suspect the version specified ni the in POM
