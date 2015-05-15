@@ -312,7 +312,7 @@ I also suspect the version specified ni the in POM
 
 * Tests (Class with *Test suffix) should be in the folder ./src/test/java . This is imposed by Maven and of course setting the test folder by IntellijIdea doesnt matter.
 
-
+15 May 2015
 Security now works:
 Based on two things:
 http://docs.spring.io/autorepo/docs/spring-security/3.2.0.RELEASE/apidocs/org/springframework/security/config/annotation/web/configuration/EnableWebSecurity.html
@@ -329,3 +329,6 @@ Just adding <artifactId>spring-boot-starter-security</artifactId> to maven enabl
 Without the configuration class, (but using the artifact/dependency,) a dialogue box appears. Using configuration, a form appears.
 
 kill  -SIGCONT 6549
+
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd");
+  String text = date.toString(formatter);

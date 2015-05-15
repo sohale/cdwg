@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import sboot.endpoints.UserStateSummaryView;
 
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 import org.apache.commons.logging.Log;
@@ -45,8 +46,13 @@ public class UserState {
     //private ZonedDateTime lastTimeSet_RECEIVED_FROM_SERVER;
     //private ZonedDateTime lastTimeSet_RECEIVED_FROM_WEBSOCKETS;
 
-    public ZonedDateTime getLastTimeSet(){
-        return this.lastTimeSet_REST;
+    //public ZonedDateTime getLastTimeSet(){
+    //    return this.lastTimeSet_REST;
+    //}
+    public String getLastTimeSet(){
+        //DateTimeFormatter f = DateTimeFormatter.ISO_ZONED_DATE_TIME;
+        //return this.lastTimeSet_REST.format(f);
+        return this.lastTimeSet_REST+"";
     }
 
     //@Resource //Problem: is not injected.
