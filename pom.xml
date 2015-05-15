@@ -76,6 +76,7 @@
 
         <!-- Security-->
         <!--add Spring Security and ApacheDS, an open source LDAP server.-->
+        <!-- Just adding the following three will enable security
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -89,6 +90,7 @@
             <artifactId>apacheds-server-jndi</artifactId>
             <version>1.5.5</version>
         </dependency>
+        -->
 
         <!-- Unit, part 2 -->
 
