@@ -309,3 +309,5 @@ DSML editor
 
 Security ldif error.
 I also suspect the version specified ni the in POM
+
+* Tests (Class with *Test suffix) should be in the folder ./src/test/java . This is imposed by Maven and of course setting the test folder by IntellijIdea doesnt matter.
