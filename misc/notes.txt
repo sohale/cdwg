@@ -311,3 +311,21 @@ Security ldif error.
 I also suspect the version specified ni the in POM
 
 * Tests (Class with *Test suffix) should be in the folder ./src/test/java . This is imposed by Maven and of course setting the test folder by IntellijIdea doesnt matter.
+
+
+Security now works:
+Based on two things:
+http://docs.spring.io/autorepo/docs/spring-security/3.2.0.RELEASE/apidocs/org/springframework/security/config/annotation/web/configuration/EnableWebSecurity.html
+( g: @EnableWebSecurity )
+and:
+https://github.com/spring-guides/gs-securing-web
+
+
+
+todo: Difererntiate: SSL, SSH, OAuth, etc
+todo: OAuth
+
+Just adding <artifactId>spring-boot-starter-security</artifactId> to maven enables security.
+Without the configuration class, (but using the artifact/dependency,) a dialogue box appears. Using configuration, a form appears.
+
+kill  -SIGCONT 6549
