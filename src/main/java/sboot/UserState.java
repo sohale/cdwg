@@ -36,7 +36,7 @@ public class UserState {
     public boolean isOnAppScreen(){
         return false;
     }
-    public Integer lastChoice(){
+    public Integer getLastChoice(){
         return lastChoice;
     }
 
@@ -62,7 +62,7 @@ public class UserState {
     public void setChoice(int choice, ZonedDateTime ts){
         //todo: only set when changed?
         if (this.lastChoice == choice)
-            log.warn("this.lastChoice == choice == "+choice);
+            log.warn("this.getLastChoice == choice == "+choice);
         this.lastChoice = choice;
         this.lastTimeSet_REST = ts;
         //System.out.println("*****this.timer="+this.timer);
@@ -96,6 +96,8 @@ public class UserState {
     public static UserState createUserStateInstance() { // see below: newJoins
         return new UserState("Jack");
     }
+
+
 
     //Todo: Howe to identify a unique user? WHat is the primary key: when adding a "new" user? phone no? an id number in the DB?
     //UserState is not a User class. A Userclass is like a J2EE entity.

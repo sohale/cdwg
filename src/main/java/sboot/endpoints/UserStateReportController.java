@@ -1,7 +1,6 @@
 package sboot.endpoints;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import sboot.GameInstance;
 import sboot.TimestampProvider;
 import sboot.UserState;
-import sboot.endpoints.UserStateSummaryView;
 
 import javax.annotation.Resource;
 import java.util.concurrent.atomic.AtomicLong;
@@ -67,12 +65,12 @@ public class UserStateReportController {
         //gameobj.getUserState(uid).getSummary();
         System.out.println("value received: "+uid);
         long uidl=Long.valueOf(uid+"");
-        //System.out.println("(model arg: temporary) :" + tempmodel + "      lastchoice="+tempmodel.lastChoice());
+        //System.out.println("(model arg: temporary) :" + tempmodel + "      lastchoice="+tempmodel.getLastChoice());
         System.out.println("step 2: " + uidl);
         //UserStateSummaryView ussv = new UserStateSummaryView(uidl, counter.incrementAndGet() + String.format(template, uid));
         //System.out.println("step 3: updating the tempmodel state");
         //tempmodel.setChoice((int) (uidl + 100));
-        //System.out.println("tempmodel :" + tempmodel + "      lastchoice=" + tempmodel.lastChoice());
+        //System.out.println("tempmodel :" + tempmodel + "      lastchoice=" + tempmodel.getLastChoice());
         //System.out.println("step 4: ussv=" + ussv);
 
         System.out.println("step 5: updating the this.model1 state");
@@ -80,10 +78,10 @@ public class UserStateReportController {
         //this.model1.getUserState(uidl).setChoice( this.model1.getUserState(uidl).getChoice());
         UserState us = this.model1.getUserState(uidl);
         /*
-        us.setChoice(us.lastChoice() + 1, null); //todo: null is bad
+        us.setChoice(us.getLastChoice() + 1, null); //todo: null is bad
         */
-        //System.out.println("this.model1 :" + this.model1 + "      lastchoice=" + this.model1.lastChoice());
-        System.out.println("this.model1 :" + this.model1 + "      lastchoice=" + us.lastChoice());
+        //System.out.println("this.model1 :" + this.model1 + "      lastchoice=" + this.model1.getLastChoice());
+        System.out.println("this.model1 :" + this.model1 + "      lastchoice=" + us.getLastChoice());
 
         //return ussv;
         //return "Don't use this";
