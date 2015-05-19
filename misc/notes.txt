@@ -348,7 +348,18 @@ For test:
 1- Make sure you use the right dependency.
      The package needed is spring-boot-starter-test and NOT spring-test and NOT junit.
      static imports. org.hamcrest.Matchers.equalTo ,etc   equalTo, content, status. These are methods directly imported!
-2- Make sure you instantiate the right class.
+2- Make sure you instantiate the right class (HomePageController).
 3- No need to worry about security. the simple Test works directly with the POJOs.
 
-Simple test now works ( https://spring.io/guides/gs/spring-boot/ )
+Simple (Unit) test now works ( https://spring.io/guides/gs/spring-boot/ )
+
+How to skip tests:
+mvn -DskipTests=true clean install
+
+Q:
+How to set username password.
+Why setting manually doesnt work (session).
+What is a default security password.
+
+Spring will not remain.
+

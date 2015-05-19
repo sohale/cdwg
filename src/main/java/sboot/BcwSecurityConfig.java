@@ -13,9 +13,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 // see http://docs.spring.io/autorepo/docs/spring-security/3.2.0.RELEASE/apidocs/org/springframework/security/config/annotation/web/configuration/EnableWebSecurity.html
 @Configuration
-@EnableWebSecurity
+@EnableWebSecurity //Why is this not used in: https://gerrydevstory.com/2015/03/19/setting-up-spring-security-on-spring-boot-project/
+//what is this? //@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 public class BcwSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    //Why do we have two config() for WebSecurity and HttpSecurity
     @Override
     public void configure(WebSecurity web) throws Exception {
         web
