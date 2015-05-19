@@ -40,14 +40,22 @@
             <version>2.4.3</version>
         </dependency>
 
+
         <!-- TODO -->
+        <!--
 		<dependency>
 		    <groupId>junit</groupId>
 		    <artifactId>junit</artifactId>
 		    <version>4.12</version>
 		    <scope>test</scope>
 		</dependency>
-
+        -->
+        <!-- The actual test dependency -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <!-- for JSP -->
         <dependency>
@@ -98,20 +106,25 @@
             <version>4.0.1.RELEASE</version>
         </dependency>
         -->
+
+
+        <!-- The actual security dependency -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+
         <!-- <version>1.2.3.RELEASE</version> -->
 
 
         <!-- Unit, part 2 -->
-
+        <!--
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
              <version>4.1.6.RELEASE</version>
         </dependency>
+        -->
 
         <!--
         <dependency>
