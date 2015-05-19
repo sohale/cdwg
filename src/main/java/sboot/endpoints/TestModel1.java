@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Map;
+//import java.util.Map;
+import org.springframework.ui.Model;
 
 /**
  * Created by sohail on 18/05/15.
@@ -31,17 +32,23 @@ public class TestModel1 {
     String
     do1
     (
-            //@RequestParam(value="uid", required=true)
-            Map<String, Object> model
-            //Understanding:
-            //   the model is actually an output. It constitutes the "request" (GET/POST) to the page x, where String x is returned.
+          //  //@RequestParam(value="uid", required=true)
+          //  Map<String, Long> model
+          //  //Understanding:
+          //  //   the model is actually an output. It constitutes the "request" (GET/POST) to the page x, where String x is returned.
+          Model model
             )
     {
         log.info("map instance used: " + model + "model.hashCode()=" + model.hashCode());
         int i=(int)(Math.random()*1000);
-        model.put("k"+i,"vv"+i);
+        //model.put("k"+i,"vv"+i);
+        //model.put("uid",new Long(i));
+        model.addAttribute("uid",new Long(i));
         log.info(">>> " + model + "model.hashCode()="+model.hashCode());
-        return "/";
+        return "/userfullstate";
+
+
+
     }
 }
 
