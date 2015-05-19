@@ -1,10 +1,10 @@
 function Hello($scope, $http) {
-    /*fixme: Warning: hardcoded constant*/
+    ///*fixme: Warning: hardcoded constant*/
+    // /* 'http://localhost:8080/angulargreeting' */
     u = 'http://localhost:8080//userfullstate?uid=7';
-    /* 'http://localhost:8080/angulargreeting' */
     $http.get(u).
         success(function(data) {
-            $scope.greeting = data;
+            $scope.userstate = data;
             //alert(data);
         });
 }
