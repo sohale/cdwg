@@ -332,3 +332,23 @@ kill  -SIGCONT 6549
 
 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd");
   String text = date.toString(formatter);
+
+
+19 May 2015
+            mthd(Map<String, Object> model) {}
+            //Understanding:
+            //   the model is actually an output. It constitutes the "request" (GET/POST) to the page x, where String x is returned.
+Question: Is that request a POST or a GET then?
+
+Using import org.springframework.ui.Model;
+did not help.
+
+
+For test:
+1- Make sure you use the right dependency.
+     The package needed is spring-boot-starter-test and NOT spring-test and NOT junit.
+     static imports. org.hamcrest.Matchers.equalTo ,etc   equalTo, content, status. These are methods directly imported!
+2- Make sure you instantiate the right class.
+3- No need to worry about security. the simple Test works directly with the POJOs.
+
+Simple test now works ( https://spring.io/guides/gs/spring-boot/ )
