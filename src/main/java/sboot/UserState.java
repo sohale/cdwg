@@ -1,19 +1,12 @@
 package sboot;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-import sboot.endpoints.UserStateSummaryView;
-
 import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import javax.annotation.Resource;
-
+import sboot.TimestampProvider.TimeUtils;
 
 /**
  * Instantaneous state of the user in the game.
@@ -53,6 +46,9 @@ public class UserState {
         //DateTimeFormatter f = DateTimeFormatter.ISO_ZONED_DATE_TIME;
         //return this.lastTimeSet_REST.format(f);
         return this.lastTimeSet_REST+"";
+    }
+    public String getLastTimeSetAgo(){
+        return TimeUtils.agoNotation(this.lastTimeSet_REST);
     }
 
     //@Resource //Problem: is not injected.

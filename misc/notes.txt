@@ -396,3 +396,5 @@ I guess (as for application.properties) because the webserver looks at current d
 This happens for ./public but not for resources/public .
 
 Todo: prevent theme/skin to get jarred (for efficiency).
+
+todo: Continuous integration. (mvn deploy versus install?)
