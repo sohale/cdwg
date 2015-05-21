@@ -26,11 +26,14 @@ public class GameInstance {
     // ensures
     // this.players.size()>=1
     public void simple() { //(long uid, UserState us){
-        //this.players.add(us);
-        UserState us = new UserState("Jack");
-        //UserState us = null;
+
+        UserState us = new UserState("John");
         this.players.put(7L, us);
-        assert this.players.size() == 1;
+
+        this.players.put(8L, new UserState("Jack"));
+
+        assert this.players.size() == 2;
+
     }
 
     //UserState is for this game. A user (a UserEntity) can have more than one UserState when more tha one game is being played.

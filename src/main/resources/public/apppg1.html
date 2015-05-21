@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- Single webpage app with no (least) transition betweenpages. Should show the user panel during the ame.
+As a view it represents UserState but more.
+Has buttons too.-->
+<!-- Moved to resources/public/* Based on uggestions in https://spring.io/guides/tutorials/spring-security-and-angular-js/ -->
+<html ng-app>
+<head>
+    <title></title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="css/angular-bootstrap.css" rel="stylesheet"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], .ng-cloak {
+        display: none !important;
+        }
+    </style>
+
+    <style> .glyphicon-thumbs-up { cursor:pointer }</style>
+</head>
+
+<body ng-app="helloz"> <!-- (todo:) The <body> is marked as ng-app="hello" which means we need to define a JavaScript module that Angular will recognise as an application called "hello". -->
+<div class="container">
+    <div class="page-header"> <!-- not necessary -->
+        <h3>Bistable Crowd</h3>
+    </div>
+    <!-- <div ng-controller="YourStateJs" ng-cloak class="ng-cloak"> -->
+    <div ng-controller="getYourStateJs" ng-cloak class="ng-cloak">
+        <!-- ng-controller is a "controller", the one who fills-in the handlebars here-->
+        <!-- "ng-cloak" is not a bootstrap css. It belongs to AngularJS-->
+        <!-- hello.js    use UserStateJs  and YourStateJs-->
+        <p>User: {{userstate.publicName}} [uid:7] Chose: {{userstate.lastChoice}}.</p>
+        <p>When? {{userstate.lastTimeSet}}, Last seen: N/A. [present: {{userstate.onAppScreen}}]</p>
+    </div>
+
+    <!-- todo:  Don't use Controllers. Just use directives instead.-->
+    <div ng-controller="getUserStateJs">
+        <p>User: {{userstate.publicName}} [uid:8] Chose: {{userstate.lastChoice}}.</p>
+        <p>When? {{userstate.lastTimeSet}}, Last seen: N/A. [present: {{userstate.onAppScreen}}]</p>
+    </div>
+</div>
+
+<script src="js/angular-bootstrap.js" type="text/javascript"></script>
+<script src="js/appjs1.js"></script>
+<!-- <script src="js/YourStateJs.js"></script> -->
+
+</body>
+</html>
+
+<!--
+{
+   "lastTimeSet":"null",
+   "privateName":"Jack",
+   "onAppScreen":false,
+   "publicName":"Jack"
+}
+-->
