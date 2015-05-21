@@ -363,3 +363,30 @@ What is a default security password.
 
 Spring will not remain.
 
+Now AngularJS works.
+
+21:17 pm  (19 May 2015)
+Next steps:
+__________________________________________
+Todo:
+relate that user to the login one
+store previous choices
+graph
+email
+test (damn)
+Use Filters : rest-service-cors example.  CORS: https://spring.io/guides/gs/rest-service-cors/
+rename homapage to About page.
+public ip (domain independent , port independent)
+push button SENDs information. (Angular JS)
+(page redirects: systematic. No empty page.)
+(getting notified: requesting from server to Client's browser)
+(session: [based on page1/html] which knows which uid it is. should I add uid to the json object of UserState? try to resist.)
+A simple skin.
+______________________________________________
+
+21 May 2015
+Let's apply this:
+https://spring.io/blog/2015/01/12/spring-and-angular-js-a-secure-single-page-application
+
+todo:  [In AnguarJS] Don't use Controllers. Just use directives instead.
+http://teropa.info/blog/2014/10/24/how-ive-improved-my-angular-apps-by-banning-ng-controller.html
