@@ -31,7 +31,30 @@ Has buttons too.-->
         <!-- hello.js    use UserStateJs  and YourStateJs-->
         <p>User: {{userstate.publicName}} [uid:7] Chose: {{userstate.lastChoice}}.</p>
         <p>When? {{userstate.lastTimeSet}}, Last seen: N/A. [present: {{userstate.onAppScreen}}]</p>
+        <!------ Buttons ------>
+        <p>
+            <a href="http://localhost:8080/choose?uid=7&choice=1">
+                <button type="button" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> 1
+                    <!-- :Horizontal -->
+                </button>
+            </a>
+            <a href="http://localhost:8080/choose?uid=7&choice=2">
+                <button type="button" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon glyphicon-resize-vertical" aria-hidden="true"></span> 2
+                    <!-- Vertical -->
+                </button>
+            </a>
+            <a href="http://localhost:8080/choose?uid=7&choice=3">
+                <button type="button" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon glyphicon-resize-full" aria-hidden="true"></span> 3
+                    <!-- Across -->
+                </button>
+            </a>
+        </p>
+
     </div>
+
 
     <!-- todo:  Don't use Controllers. Just use directives instead.-->
     <div ng-controller="getUserStateJs">

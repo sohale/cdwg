@@ -390,3 +390,9 @@ https://spring.io/blog/2015/01/12/spring-and-angular-js-a-secure-single-page-app
 
 todo:  [In AnguarJS] Don't use Controllers. Just use directives instead.
 http://teropa.info/blog/2014/10/24/how-ive-improved-my-angular-apps-by-banning-ng-controller.html
+
+Changing local files immediately applies to the running server jar.
+I guess (as for application.properties) because the webserver looks at current directory and can override the jarred files.
+This happens for ./public but not for resources/public .
+
+Todo: prevent theme/skin to get jarred (for efficiency).
