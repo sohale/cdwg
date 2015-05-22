@@ -398,3 +398,22 @@ This happens for ./public but not for resources/public .
 Todo: prevent theme/skin to get jarred (for efficiency).
 
 todo: Continuous integration. (mvn deploy versus install?)
+
+//Apparently beans of the same package can be injected only
+@Resource
+public time.Classname timer;
+
+
+__________________________________________
+Todo:
+a grid panel showing multiple users but one changes.
+clicking on the button changes the app page without refreshing. [above: push button SENDs information]
+(or instead, now: move to another page (or reload page).) [above: redirect]
+graph of previous choices.
+AnhularJS filters = ?
+adding users to login.
+Finish the AngularJS/Security tutorial.
+favicon.
+href="#" links
+The 1 sec ago should disapear (or get updated)
+______________________________________________

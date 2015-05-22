@@ -1,13 +1,27 @@
 <!doctype html>
 <html ng-app>
 <head>
-    <title>Hello AngularJS</title>
+    <!-- page1.html=html test sandbox page -->
+    <title>HTML sandbox page + AngularJS</title>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <script src="hello.js"></script>
 
-    <style> .glyphicon-thumbs-up { cursor:pointer } </style>
+    <style type="text/css">
+
+
+        .red .active a,
+        .red .active a:hover {
+        background-color: red;
+        }
+
+        .nav-pills > .active > a, .nav-pills > .active > a:hover {
+        background-color: red;
+        }
+
+        .glyphicon-thumbs-up { cursor:pointer }
+    </style>
 </head>
 
 <body>
@@ -15,54 +29,84 @@
 <!-- <script type="text/ng-template" id="/home.html"> -->
 <script type="text/ng-template" id="/page1.html"></script>
 <div class="page-header">
-    <h1>The BCW Collective Decision Experiment (BistableCrowd) by UCL Crowd Cognition Lab</h1>
+    <h3>The BCW Collective Decision Experiment (BistableCrowd) by UCL Crowd Cognition Lab</h3>
+    <h3>Test pad for TwBS</h3>
 </div>
 
 <div ng-controller="Hello">
-    <p>The user is {{userstate.publicName}}</p>
-    <p>He is on App screen: {{userstate.onAppScreen}}</p>
-    <p>His last choice: {{userstate.lastChoice}}</p>
-    <p>Last clicked at: {{userstate.lastTimeSet}}</p> <!-- todo: ago -->
-    <p>Last time seen: N/A</p>
-    <h3>Test pad for TwBS</h3>
-    <p>
-    <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="#">Horizontal</a></li>
-        <li role="presentation"><a href="#">Vertical</a></li>
-        <li role="presentation"><a href="#">Across</a></li>
-    </ul>
+    <div class="well">
+        <p>The user is {{userstate.publicName}}</p>
+        <p>He is on App screen: {{userstate.onAppScreen}}</p>
+        <p>His last choice: <span class="label label-primary">{{userstate.lastChoice}}</span></p>
+        <p>Last clicked at: {{userstate.lastTimeSetAgo}} <small><small><small>{{userstate.lastTimeSet}}</small></small></small></p> <!-- todo: ago -->
+        <p>Last time seen: N/A</p>
+    </div>
 
-    </p>
-    <div class="row">
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjkzIiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MTFwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4yNDJ4MjAwPC90ZXh0PjwvZz48L3N2Zz4=" alt="...">
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                </div>
-            </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Stimulus</div>
+        <div class="panel-body">
+            <center>
+                <img src="http://www.mccauslandcenter.sc.edu/mricro/obsolete/illusions/bistable.gif" width="25%">
+            </center>
         </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjkzIiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MTFwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4yNDJ4MjAwPC90ZXh0PjwvZz48L3N2Zz4=" alt="...">
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <center>
+<!-- red doesnt work.  data-toggle="tab" ==???-->
+            <ul class="nav nav-pills red">
+                <li role="presentation" class="active"><a href="http://localhost:8080/choose?uid=7&choice=1" data-toggle="tab">Horizontal</a></li>
+                <li role="presentation"><a href="http://localhost:8080/choose?uid=7&choice=2" data-toggle="tab">Vertical</a></li>
+                <li role="presentation"><a href="http://localhost:8080/choose?uid=7&choice=3" data-toggle="tab">Across</a></li>
+            </ul>
+        </center>
+    </div>
+
+
+
+    </br>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">Panel heading without title</div>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-xs-1 col-sm-2 col-md-2">
+                    <div class="thumbnail">
+                        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjU5LjU1NDY4NzUiIHk9IjkwIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MTcxeDE4MDwvdGV4dD48L2c+PC9zdmc+" alt="...">
+                        <div class="caption">
+                            <h3>User 1</h3>
+                            <p>...</p>
+                            <p><a href="#" class="btn btn-primary" role="button">hor</a> <a href="#" class="btn btn-default" role="button">vert</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-sm-2 col-md-2">
+                    <div class="thumbnail">
+                        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjU5LjU1NDY4NzUiIHk9IjkwIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MTcxeDE4MDwvdGV4dD48L2c+PC9zdmc+" alt="...">
+                        <div class="caption">
+                            <h3>User 2</h3>
+                            <p>...</p>
+                            <p><a href="#" class="btn btn-default" role="button">hor</a> <a href="#" class="btn btn-default" role="button">vert</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-sm-2 col-md-2">
+                    <div class="thumbnail">
+                        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjU5LjU1NDY4NzUiIHk9IjkwIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MTcxeDE4MDwvdGV4dD48L2c+PC9zdmc+" alt="...">
+                        <div class="caption">
+                            <h3>User 3</h3>
+                            <p>...</p>
+                            <p><a href="#" class="btn btn-default" role="button">hor</a> <a href="#" class="btn btn-success" role="button">vert</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjkzIiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MTFwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4yNDJ4MjAwPC90ZXh0PjwvZz48L3N2Zz4=" alt="...">
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                </div>
-            </div>
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+            <span class="sr-only">60% Complete (warning)</span>
         </div>
     </div>
 </div>

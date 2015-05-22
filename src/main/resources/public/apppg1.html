@@ -29,28 +29,26 @@ Has buttons too.-->
         <!-- ng-controller is a "controller", the one who fills-in the handlebars here-->
         <!-- "ng-cloak" is not a bootstrap css. It belongs to AngularJS-->
         <!-- hello.js    use UserStateJs  and YourStateJs-->
-        <p>User: {{userstate.publicName}} [uid:7] Chose: {{userstate.lastChoice}}.</p>
-        <p>When? {{userstate.lastTimeSetAgo}}, Last seen: N/A. [present: {{userstate.onAppScreen}}]</p>
+        <p>User: {{userstate.publicName}} [uid:7] Chose:
+            <span class="label label-primary">{{userstate.lastChoice}}</span> {{userstate.lastTimeSetAgo}}.</p>
+        <p>Last seen: N/A. [present: {{userstate.onAppScreen}}]</p>
         <!------ Buttons ------>
         <p>
             <a href="http://localhost:8080/choose?uid=7&choice=1">
                 <button type="button" class="btn btn-default btn-lg">
                     <span class="glyphicon glyphicon glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> 1
                     <!-- :Horizontal -->
-                </button>
-            </a>
+                </button></a>
             <a href="http://localhost:8080/choose?uid=7&choice=2">
                 <button type="button" class="btn btn-default btn-lg">
                     <span class="glyphicon glyphicon glyphicon-resize-vertical" aria-hidden="true"></span> 2
                     <!-- Vertical -->
-                </button>
-            </a>
+                </button></a>
             <a href="http://localhost:8080/choose?uid=7&choice=3">
                 <button type="button" class="btn btn-default btn-lg">
                     <span class="glyphicon glyphicon glyphicon-resize-full" aria-hidden="true"></span> 3
                     <!-- Across -->
-                </button>
-            </a>
+                </button></a>
         </p>
 
     </div>
