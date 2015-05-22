@@ -415,5 +415,8 @@ adding users to login.
 Finish the AngularJS/Security tutorial.
 favicon.
 href="#" links
-The 1 sec ago should disapear (or get updated)
+The 1 sec ago should disappear (or get updated)
 ______________________________________________
+
+
+Bootstrap: Why does the size keep changing?
