@@ -465,3 +465,14 @@ greeting() called with (stomp message=null)
 
 Lesson:
 //The private member variable of the field name must be of the same name with the getter, otherwise the automatic conversion (constructor) from a "stringified JSON" will not work!
+
+Very good intro to STOMP & WebSockets
+https://www.new-bamboo.co.uk/blog/2010/02/10/json-event-based-convention-websockets/
+
+Stayed up 22 May XM
+
+23 May 2015:
+12:48am
+Todo: WebSockets Security ( + SockJS)
+It already uses subscribe, so it will work.
+Problem: no queuing. #Requirement negotiation.

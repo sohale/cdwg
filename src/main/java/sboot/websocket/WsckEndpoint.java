@@ -25,5 +25,7 @@ public class WsckEndpoint {
         //org.springframework.messaging.SubscribableChannel s;
         //s.subscribe();s.send();
         return new MyMessageJson("Hello, " + message.getMyStompText() + "!");
+
+        //see  org.springframework.messaging.Message
     }
 }

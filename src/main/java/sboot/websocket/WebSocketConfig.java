@@ -9,6 +9,9 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 
 /**
  * Created by sohail on 23/05/15.
+ * STOMP support = spring-messaging + spring-websocket
+ *
+ * http://docs.spring.io/spring/docs/current/spring-framework-reference/html/websocket.html#websocket-stomp-enable
  */
 @Configuration
 @EnableWebSocketMessageBroker
