@@ -18,9 +18,12 @@ public class WsckEndpoint {
     @MessageMapping("/wsckendpoint") //web access ==> Welcome to SockJS!
     @SendTo("/topic/greetings") //subscription destination
     public MyMessageJson greeting(MyStompMessage message) throws Exception {
-        log.info("greeting() was called with (stomp message=" + message.getMyStompText()+")");
+        log.info("greeting() was called with (stomp message=" + message.getMyStompText() + ")");
         Thread.sleep(1000); // simulated delay
         log.info("1 sec later...");
+        //org.springframework.messaging.SubscribableChannel
+        //org.springframework.messaging.SubscribableChannel s;
+        //s.subscribe();s.send();
         return new MyMessageJson("Hello, " + message.getMyStompText() + "!");
     }
 }
