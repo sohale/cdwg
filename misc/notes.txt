@@ -420,3 +420,48 @@ ______________________________________________
 
 
 Bootstrap: Why does the size keep changing?
+
+22 May: going for WebSocket
+Docs: https://spring.io/guides/gs/messaging-stomp-websocket/
+
+Todo: Not to forget: EC2, Docker, (*MQ), Cass., JPA, Hibernate
+Todo: continue: email.
+todo: https://spring.io/guides/tutorials/spring-security-and-angular-js/
+
+Works.
+
+Warning (js console)
+*** SockJS CDN is being retired on Dec 1st *** Please transition to a public CDN. See https://github.com/sockjs/sockjs-client/issues/198 for more information.
+
+/wsckendpoint
+/topic/greetings    @SendTo  and  js: stompClient.subscribe('/topic/greetings'...)
+/app/hello
+
+where:
+/app                  setApplicationDestinationPrefixes
+/topic                enableSimpleBroker
+/wsckendpoint         is @MessageMapping
+
+stompClient.send("/app/hello", content...)
+Hence: /app/hello *receives* content from stomp.js
+Then ???StompmtStompText is set to it.
+
+>>> SUBSCRIBE
+id:sub-0
+
+destination:/topic/greetings       >>> SUBSCRIBE
+destination:/app/wsckendpoint        >>> SEND
+//instead of destination:/app/hello
+//This name is the same as wsckendpoint
+
+http://localhost:8080/wsckendpoint
+Welcome to SockJS!
+
+//Seems to need a default constructor MyStompMessage()
+
+The endpoint wsckendpoint is called by SEND.
+
+greeting() called with (stomp message=null)
+
+Lesson:
+//The private member variable of the field name must be of the same name with the getter, otherwise the automatic conversion (constructor) from a "stringified JSON" will not work!
