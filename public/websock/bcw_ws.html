@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <script src="downloaded/sockjs-0.3.4.js"></script>
+    <script src="downloaded/stomp.js"></script>
+    <script src="bcw-wsock.js"></script>
+    <script type="text/javascript">
+    </script>
+</head>
+<body onload="disconnect()">
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+<div>
+    <div>
+        <button id="connect" onclick="connect();">Connect</button>
+        <button id="disconnect" disabled="disabled" onclick="disconnect();">Disconnect</button>
+    </div>
+    <div id="conversationDiv">
+        <label>Place your opinion:</label><input type="text" id="uid" value="7" />
+        new choice: <input type="text" id="hischoice" value="1" />
+        old choice: <input type="text" id="oldchoice" value="2" />
+        <button id="sendChoice" onclick="sendChoice();">Send</button>
+        <p id="response"></p>
+    </div>
+</div>
+</body>
+</html>
+<!--
+GET http://localhost:8080/hello/info 404 (Not Found)AbstractXHRObject._start @ sockjs-0.3.4.js:807(anonymous function) @ sockjs-0.3.4.js:841
+stomp.js:145 Whoops! Lost connection to undefined
+-->

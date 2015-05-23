@@ -425,6 +425,7 @@ Bootstrap: Why does the size keep changing?
 Docs: https://spring.io/guides/gs/messaging-stomp-websocket/
 
 Todo: Not to forget: EC2, Docker, (*MQ), Cass., JPA, Hibernate
+[JMS?]
 Todo: continue: email.
 todo: https://spring.io/guides/tutorials/spring-security-and-angular-js/
 
@@ -476,3 +477,9 @@ Stayed up 22 May XM
 Todo: WebSockets Security ( + SockJS)
 It already uses subscribe, so it will work.
 Problem: no queuing. #Requirement negotiation.
+
+Challenge: re-connecting:
+Wen briefly disconnected or switched from Wifi to 3G, etc.
+
+connected to server undefined
+stomp.js:145
