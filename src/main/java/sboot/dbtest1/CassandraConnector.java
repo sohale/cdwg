@@ -1,4 +1,4 @@
-//package com.marxmart.persistence;
+package sboot.dbtest1;//package com.marxmart.persistence;
 
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Host;

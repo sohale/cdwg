@@ -1,11 +1,14 @@
+package sboot.dbtest1;
+
 import com.datastax.driver.core.*;
+import sboot.dbtest1.CassandraConnector;
 
 import static java.lang.System.out;
 
 public class CassandraTestMain {
 
     /**
-     * CassandraTestMain function for demonstrating connecting to Cassandra with host and port.
+     * sboot.dbtest1.CassandraTestMain function for demonstrating connecting to Cassandra with host and port.
      *
      * @param args Command-line arguments; first argument, if provided, is the
      *             host and second argument, if provided, is the port.

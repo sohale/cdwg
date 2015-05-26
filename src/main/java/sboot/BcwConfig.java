@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import sboot.dbtest1.DBMan1;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -20,7 +21,9 @@ public class BcwConfig {
     //Must be non static
     @Bean //Both @Bean and @Value are needed.
     @Value("${graph.shape}") //Could not resolve placeholder 'graph.shape' in string value "${graph.shape}"
-    public GameInstance createGameInstance(String graphShape) {
+    public GameInstance createGameInstance(String graphShape) //, DBMan1 dbman_instance)
+     {
+        //System.out.println("**** dbman_instance ="+dbman_instance);
         System.out.println("BcwConfig.createGameInstance was called with parameter graphShape=" + graphShape + " len=" + graphShape.length());
         GameInstance g= new GameInstance(graphShape);
         g.simple();
@@ -49,6 +52,13 @@ public class BcwConfig {
         }
         */
         return msender;
+    }
+
+    @Bean
+    public DBMan1 some_name(){
+        DBMan1 b=new DBMan1();
+        System.out.println("main DBMan1 bean = "+b);
+        return b;
     }
 
 }
