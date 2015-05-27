@@ -483,3 +483,11 @@ Wen briefly disconnected or switched from Wifi to 3G, etc.
 
 connected to server undefined
 stomp.js:145
+
+26 May:
+Using DB: bean was created (ad hoc).
+Test: Did not test (DB sintallation issue)
+next: save in DB just at the "choice" operation (threaded instead of queue).
+
+27 May
+Combining apppg1.html with bcw_wc.html
