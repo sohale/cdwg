@@ -527,4 +527,10 @@ AngularJS tutorial (yt & printout)
 //This file contains important AngularJS "controller"s used by the App (ng-controller="getYourStateJs").
 //They are not organised as a module. If as a module, each (x) should be set as:  angular.module(...).controller(name, THIS )
 
-//Module now used by Angular  in App page.
+//Tutorial is fully 1-read now on paper. (Video: not finished yet: 52:03). (Needs to be re-read.)
+
+//Module now used by Angular  in App page.  [15:00pm?]
+
+//Todo: Use Angular lists (ng-repeat)
+
+//Next: Buttons don't make the page disappear. ng-click (or data-ng-click).

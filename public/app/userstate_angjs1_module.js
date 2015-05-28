@@ -31,7 +31,8 @@ angular.module('my-usestate-angjs-module', [])
   getUserStateJs2)
   .controller('getYourStateJs_',
   getYourStateJs2)
-
+  .controller('getYourStateJs_',
+  getYourStateJs2)
 
 /* This is an AngularJS module.
 There is a lot going on here:

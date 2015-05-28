@@ -32,11 +32,11 @@ Has buttons too.-->
 </head>
 
 <body ng-app="my-usestate-angjs-module" onload="initial_reconnect()">
-      <!-- (todo:) The <body> is marked as ng-app="hello" which means we need to define a JavaScript "module" (not a function) that Angular will recognise as an application called "hello". -->
-      <!--
-      Although "initial_reconnect()" is not in the module "my-usestate-angjs-module" but it still works.
-      Because "onload" is non-AngularJS.
-      -->
+<!-- (todo:) The <body> is marked as ng-app="hello" which means we need to define a JavaScript "module" (not a function) that Angular will recognise as an application called "hello". -->
+<!--
+Although "initial_reconnect()" is not in the module "my-usestate-angjs-module" but it still works.
+Because "onload" is non-AngularJS.
+-->
 <div class="container">
     <div class="page-header"> <!-- not necessary -->
         <h3>Bistable Crowd</h3>
@@ -78,19 +78,19 @@ Has buttons too.-->
     </div>
 </div>
 
-      <hr/>
-      <noscript><h2 style="color: #ff0000">Websocket capability disabled because Seems your browser doesn't support Javascript.</h2></noscript>
-      <div ng-cloak class="ng-cloak">
-          <div>
-              <button id="connect" onclick="connect();"
-                      class="btn btn-default btn-lg">
-                  Connect
-              </button>
-              <button id="disconnect" disabled="disabled" onclick="disconnect();"
-                      class="btn btn-default btn-lg"
-                      >Disconnect</button>
-          </div>
-          <div id="conversationDiv">
+<hr/>
+<noscript><h2 style="color: #ff0000">Websocket capability disabled because Seems your browser doesn't support Javascript.</h2></noscript>
+<div ng-cloak class="ng-cloak">
+    <div>
+        <button id="connect" onclick="connect();"
+                class="btn btn-default btn-lg">
+            Connect
+        </button>
+        <button id="disconnect" disabled="disabled" onclick="disconnect();"
+                class="btn btn-default btn-lg"
+                >Disconnect</button>
+    </div>
+    <div id="conversationDiv">
 
 
 
@@ -98,54 +98,54 @@ Has buttons too.-->
 
 
 
-<!--
-              <div class="row">
-                  <div class="col-lg-6  col-sm-4">
-                      <div class="input-group">
+        <!--
+                      <div class="row">
+                          <div class="col-lg-6  col-sm-4">
+                              <div class="input-group">
 
-                          <input type="text" class="col-sm-4" placeholder="Search for..." >
-                          <label>Label position does not work. The reason is: class="col-lg-2" </label>
-                          <input type="text" class="col-sm-4" placeholder="Search for..." >
-                          <input type="text" class="col-sm-4" placeholder="Search for..." >
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
-                      </div>
-                  </div>
-              </div>
--->
-
-
-<!-- form-control = full row-->
-
-              <div class="row">
-                  <div class="col-sm-8">
-              <div class="row">
-                  <!--<div class="col-lg-4  col-sm-4"> -->
-                      <!-- <span class="input-group"> -->
-                      <div class="col-xs-1">
-                          <input type="text" id="uid" value="7" placeholder="UID" class="form-control"/>
+                                  <input type="text" class="col-sm-4" placeholder="Search for..." >
+                                  <label>Label position does not work. The reason is: class="col-lg-2" </label>
+                                  <input type="text" class="col-sm-4" placeholder="Search for..." >
+                                  <input type="text" class="col-sm-4" placeholder="Search for..." >
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+                              </div>
                           </div>
-                  <div class="col-xs-1">
-                      <input type="text" id="hischoice" value="1" placeholder="New choice" class="form-control"/>
                       </div>
-                  <div class="col-xs-1">
-                      <input type="text" id="oldchoice" value="2" placeholder="Old choice" class="form-control"/>
-                      </div>
-                  <div class="col-xs-2">
+        -->
+
+
+        <!-- form-control = full row-->
+
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <!--<div class="col-lg-4  col-sm-4"> -->
+                    <!-- <span class="input-group"> -->
+                    <div class="col-xs-1">
+                        <input type="text" id="uid" value="7" placeholder="UID" class="form-control"/>
+                    </div>
+                    <div class="col-xs-1">
+                        <input type="text" id="hischoice" value="1" placeholder="New choice" class="form-control"/>
+                    </div>
+                    <div class="col-xs-1">
+                        <input type="text" id="oldchoice" value="2" placeholder="Old choice" class="form-control"/>
+                    </div>
+                    <div class="col-xs-2">
                           <span class="input-group-btn ">
                           <button id="sendChoice" onclick="sendChoice();"
                                   class="btn btn-default" type="button"
                                   >Vote</button>
                     </span>
-                      </div>
-              </div>
-          </div>
-              </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-          <p id="response"></p>
-      </div>
-      </div>
+        <p id="response"></p>
+    </div>
+</div>
 
 
 
@@ -154,7 +154,7 @@ Has buttons too.-->
 
 
 <script src="/js/angular-bootstrap.js" type="text/javascript"></script>
-<script src="/js/appjs1.js"></script>
+<!-- <script src="/js/appjs1.js"></script> -->
 <!-- <script src="js/YourStateJs.js"></script> -->
 
 </body>
