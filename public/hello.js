@@ -1,3 +1,4 @@
+//todo: deprecate later
 function Hello($scope, $http) {
     ///*fixme: Warning: hardcoded constant*/
     // /* 'http://localhost:8080/angulargreeting' */

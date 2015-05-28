@@ -87,3 +87,8 @@
             //todo: change field names
             response.appendChild(p);
         }
+
+function initial_reconnect() {
+    disconnect();
+    connect();
+}

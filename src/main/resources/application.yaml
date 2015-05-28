@@ -11,3 +11,7 @@ spring:
     mail:
         host: smtp.gmail.com
 
+#How /when is this used?
+security:
+  user:
+    password: password

@@ -1,3 +1,5 @@
+//This file contains important AngularJS "controller"s used by the App (ng-controller="getYourStateJs").
+//They are not organised as a module. If as a module, each (x) should be set as:  angular.module(...).controller(name, THIS )
 function getUserStateJs($scope, $http) {
     ///*fixme: Warning: hardcoded constant*/
     u = 'http://localhost:8080//userfullstate?uid=8';

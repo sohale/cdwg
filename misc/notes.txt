@@ -491,3 +491,38 @@ next: save in DB just at the "choice" operation (threaded instead of queue).
 
 27 May
 Combining apppg1.html with bcw_wc.html
+
+
+https://spring.io/blog/2015/01/12/spring-and-angular-js-a-secure-single-page-application
+
+Error finding angular..
+going back to follow:
+e.g wro.properties, etc
+https://spring.io/blog/2015/01/12/spring-and-angular-js-a-secure-single-page-application
+https://github.com/dsyer/spring-security-angular/tree/master/basic
+Wro4j = Web Resource Optimizer for Java
+
+
+CSP (Content Security Policy)
+
+
+angular-bootstrap.js:15 Uncaught TypeError: window.angular.$$csp is not a function
+line 15 angular-bootstrap.js
+
+WARNING: Tried to load angular more than once.
+
+AngularJS version.
+
+todo
+*** SockJS CDN is being retired on Dec 1st *** Please transition to a public CDN. See https://github.com/sockjs/sockjs-client/issues/198 for more information.
+
+
+Uncaught Error: No module: hello
+appeared only when I removed the tag ng-app from <html ng-app>
+
+28 May 2015
+AngularJS tutorial (yt & printout)
+// @SpringBootApplication means if you run its psvm main, you have Everything
+
+//This file contains important AngularJS "controller"s used by the App (ng-controller="getYourStateJs").
+//They are not organised as a module. If as a module, each (x) should be set as:  angular.module(...).controller(name, THIS )

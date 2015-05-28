@@ -3,7 +3,7 @@
 As a view it represents UserState but more.
 Has buttons too.-->
 <!-- Moved to resources/public/* Based on uggestions in https://spring.io/guides/tutorials/spring-security-and-angular-js/ -->
-<html ng-app>
+<html> <!-- <html ng-app> -->
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -24,14 +24,19 @@ Has buttons too.-->
     <script src="/websock/downloaded/sockjs-0.3.4.js"></script>
     <script src="/websock/downloaded/stomp.js"></script>
     <script src="/websock/bcw-wsock.js"></script>
+    <!-- <script src="/hello.js"></script> -->
+    <script src="./userstate_angjs1_module.js"></script>
     <script type="text/javascript">
     </script>
 
 </head>
 
-<body ng-app="helloz"
-      onload="disconnect()">
-      <!-- (todo:) The <body> is marked as ng-app="hello" which means we need to define a JavaScript module that Angular will recognise as an application called "hello". -->
+<body ng-app="my-usestate-angjs-module" onload="initial_reconnect()">
+      <!-- (todo:) The <body> is marked as ng-app="hello" which means we need to define a JavaScript "module" (not a function) that Angular will recognise as an application called "hello". -->
+      <!--
+      Although "initial_reconnect()" is not in the module "my-usestate-angjs-module" but it still works.
+      Because "onload" is non-AngularJS.
+      -->
 <div class="container">
     <div class="page-header"> <!-- not necessary -->
         <h3>Bistable Crowd</h3>
@@ -67,7 +72,7 @@ Has buttons too.-->
 
 
     <!-- todo:  Don't use Controllers. Just use directives instead.-->
-    <div ng-controller="getUserStateJs">
+    <div ng-controller="getUserStateJs" ng-cloak class="ng-cloak">
         <p>User: {{userstate.publicName}} [uid:8] Chose: {{userstate.lastChoice}}.</p>
         <p>When? {{userstate.lastTimeSet}}, Last seen: N/A. [present: {{userstate.onAppScreen}}]</p>
     </div>
@@ -75,7 +80,7 @@ Has buttons too.-->
 
       <hr/>
       <noscript><h2 style="color: #ff0000">Websocket capability disabled because Seems your browser doesn't support Javascript.</h2></noscript>
-      <div>
+      <div ng-cloak class="ng-cloak">
           <div>
               <button id="connect" onclick="connect();"
                       class="btn btn-default btn-lg">
@@ -148,7 +153,7 @@ Has buttons too.-->
 
 
 
-<script src="js/angular-bootstrap.js" type="text/javascript"></script>
+<script src="/js/angular-bootstrap.js" type="text/javascript"></script>
 <script src="/js/appjs1.js"></script>
 <!-- <script src="js/YourStateJs.js"></script> -->
 

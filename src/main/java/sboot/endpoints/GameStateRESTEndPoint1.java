@@ -33,6 +33,6 @@ public class GameStateRESTEndPoint1 {
         //return GameInstance.createGameInstance(counter.incrementAndGet(), String.format(template, name));
         System.out.print("this.gameinstance= ");
         System.out.println(this.gameinstance);
-        return this.gameinstance; //writes nothing in curl
+        return this.gameinstance; //writes nothing in curl //what is the intended function of a "return" then?
     }
 }

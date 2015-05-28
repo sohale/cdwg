@@ -17,6 +17,8 @@ import org.springframework.ui.Model;
 @Controller
 @RequestMapping("/mtest1") //If not specified, all URLs are redirected here
 public class TestModel1 {
+    //Why a "model" is a @Controller?
+
     //@Resource
     //GameInstance gameModel;
     private static final Log log = LogFactory.getLog(ChooseOnPushButtonController.class);
