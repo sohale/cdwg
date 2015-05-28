@@ -42,13 +42,13 @@ Has buttons too.-->
         <h3>Bistable Crowd</h3>
     </div>
     <!-- <div ng-controller="YourStateJs" ng-cloak class="ng-cloak"> -->
-    <div ng-controller="getYourStateJs" ng-cloak class="ng-cloak">
+    <div ng-controller="getYourStateJs_" ng-cloak class="ng-cloak">
         <!-- ng-controller is a "controller", the one who fills-in the handlebars here-->
         <!-- "ng-cloak" is not a bootstrap css. It belongs to AngularJS-->
         <!-- hello.js    use UserStateJs  and YourStateJs-->
         <p>User: {{userstate.publicName}} [uid:7] Chose:
             <span class="label label-primary">{{userstate.lastChoice}}</span> {{userstate.lastTimeSetAgo}}.</p>
-        <p>Last seen: N/A. [present: {{userstate.onAppScreen}}]</p>
+        <p>Last seen: N/A. [present: {{userstate.onAppScreen}}] [{{userstate.debugText}}]</p>
         <!------ Buttons ------>
         <p>
             <a href="http://localhost:8080/choose?uid=7&choice=1">
@@ -72,9 +72,9 @@ Has buttons too.-->
 
 
     <!-- todo:  Don't use Controllers. Just use directives instead.-->
-    <div ng-controller="getUserStateJs" ng-cloak class="ng-cloak">
+    <div ng-controller="getUserStateJs_" ng-cloak class="ng-cloak">
         <p>User: {{userstate.publicName}} [uid:8] Chose: {{userstate.lastChoice}}.</p>
-        <p>When? {{userstate.lastTimeSet}}, Last seen: N/A. [present: {{userstate.onAppScreen}}]</p>
+        <p>When? {{userstate.lastTimeSet}}, Last seen: N/A. [present: {{userstate.onAppScreen}}] [{{userstate.debugText}}].</p>
     </div>
 </div>
 

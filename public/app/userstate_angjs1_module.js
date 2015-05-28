@@ -1,10 +1,36 @@
 
+/* from public/js/appjs1.js */
+function getUserStateJs2($scope, $http) {
+    ///*fixme: Warning: hardcoded constant*/
+    u = 'http://localhost:8080//userfullstate?uid=8';
+    $http.get(u).
+        success(function(data) {
+            $scope.userstate = data;
+            $scope.userstate.debugText="(s)he2";
+            //alert(data);
+        });
+}
+
+/* from public/js/appjs1.js */
+function getYourStateJs2($scope, $http) {
+    //todo: (AngularJS) Use getUserStateJs with uid param.
+    u = 'http://localhost:8080//userfullstate?uid=7';
+    $http.get(u).
+        success(function(data) {
+            $scope.userstate = data;
+            $scope.userstate.debugText="you2";
+            //alert(data);
+        });
+}
+
+
 
 angular.module('my-usestate-angjs-module', [])
-  .controller('hommeeem',
-  function($scope) {$scope.greeting = {id: 'xxx', content: 'Hello World!'} }
-  )
-//not actually used/accesses from apppg2.html
+  .controller('getUserStateJs_',
+  //function($scope) {$scope.greeting = {id: 'xxx', content: 'Hello World!'} }
+  getUserStateJs2)
+  .controller('getYourStateJs_',
+  getYourStateJs2)
 
 
 /* This is an AngularJS module.
