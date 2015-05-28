@@ -11,6 +11,8 @@ function getUserStateJs2($scope, $http) {
         });
 }
 
+
+
 /* from public/js/appjs1.js */
 function getYourStateJs2($scope, $http) {
     //todo: (AngularJS) Use getUserStateJs with uid param.
@@ -21,6 +23,15 @@ function getYourStateJs2($scope, $http) {
             $scope.userstate.debugText="you2";
             //alert(data);
         });
+
+    function choosefunction(c){
+       //$scope.userstate.lastChoice.push({});
+       $scope.userstate.lastChoice=c;
+       alert("c="+c);
+    }
+
+    //data-ng-click="uchoose(3)"
+    $scope.uchoose = choosefunction;  //uchoose  is simply called
 }
 
 
@@ -31,8 +42,7 @@ angular.module('my-usestate-angjs-module', [])
   getUserStateJs2)
   .controller('getYourStateJs_',
   getYourStateJs2)
-  .controller('getYourStateJs_',
-  getYourStateJs2)
+
 
 /* This is an AngularJS module.
 There is a lot going on here:
