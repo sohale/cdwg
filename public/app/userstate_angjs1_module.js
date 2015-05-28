@@ -35,7 +35,7 @@ function getYourStateJs2($scope, $http) {
        */
        //CHOOSE_URL="http://localhost:8080/choose?uid=7&choice=1";
        CHOOSE_URL="/choosej?uid=7&choice="+c;
-       alert("url="+CHOOSE_URL);
+       //alert("url="+CHOOSE_URL);
 
        function put_in_scope(data){
           $scope.userstate = data;
