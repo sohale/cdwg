@@ -27,7 +27,23 @@ function getYourStateJs2($scope, $http) {
     function choosefunction(c){
        //$scope.userstate.lastChoice.push({});
        $scope.userstate.lastChoice=c;
-       alert("c="+c);
+       //alert("c="+c);
+       /*
+       // see public/websock/bcw-wsock.js:
+       jsn_string=JSON.stringify({ 'uid': uid, 'new_choice':choice,  'old_choice':old_choice  });
+       stompClient.send(APP_WEBSOCK_FULL, {}, jsn_string); //Send as a string.
+       */
+       //CHOOSE_URL="http://localhost:8080/choose?uid=7&choice=1";
+       CHOOSE_URL="/choosej?uid=7&choice="+c;
+       alert("url="+CHOOSE_URL);
+
+       function put_in_scope(data){
+          $scope.userstate = data;
+          $scope.userstate.debugText = "set through a json returned via the GET sent to the RESTController";
+       }
+
+       //this GET actually sends data, then puts it [the json] into $scope:
+       $http.get(CHOOSE_URL).success(put_in_scope);
     }
 
     //data-ng-click="uchoose(3)"
