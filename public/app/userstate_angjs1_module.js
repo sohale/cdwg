@@ -37,9 +37,22 @@ function getYourStateJs2($scope, $http) {
        CHOOSE_URL="/choosej?uid=7&choice="+c;
        //alert("url="+CHOOSE_URL);
 
+        /*
+        json returned from the spring:controller REST endpoint: {"lastChoice":1,"publicName":"John","lastTimeSet":"2015-05-28T18:11:06.156+01:00[Europe/London]","lastTimeSetAgo":"1 msec ago","privateName":"John","onAppScreen":false,"debugText":"set through a json returned via the GET sent to the RESTController"}
+        versus:
+        {"uid":"7","new_choice":"1","old_choice":"0"}
+        */
+
+       //put back in scope
        function put_in_scope(data){
           $scope.userstate = data;
           $scope.userstate.debugText = "set through a json returned via the GET sent to the RESTController";
+          //alert(JSON.stringify(data));
+          console.log("json returned from the spring:controller REST endpoint: "+JSON.stringify(data));
+          //userdata returned from "choosej" is in a different format, just for actual view. also has redundancy.
+          //I will need another format.
+          //lowerPanel_setChoice(data.uid,data.new_choice,data.old_choice); //So many times the same record/object/struct is copied and re-represented/constructed/set.
+          lowerPanel_setChoice(7,data.lastChoice,0); //So many times the same record/object/struct is copied and re-represented/constructed/set.
        }
 
        //this GET actually sends data, then puts it [the json] into $scope:

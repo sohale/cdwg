@@ -534,3 +534,15 @@ AngularJS tutorial (yt & printout)
 //Todo: Use Angular lists (ng-repeat)
 
 //Next: Buttons don't make the page disappear. ng-click (or data-ng-click).
+
+//Todo: last time ago using Angular (jscript)
+
+Todo:
+change the formats.
+- Angularise the jscripts in bcw_ws.html.
+- change the fucntion names for lowerpanel_functname()
+- combine bcw_ws.html witht the module js.
+- Review (reflect on) all data flows (copiers/converters). [Too early. After the Angularisation]
+
+If data is sent to REST and sent back, does it make sense to have two layers (client-client and client-server-client) of communication?
+Slow and fast, REST and Websockets.

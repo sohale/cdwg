@@ -63,6 +63,14 @@
             console.log("Disconnected./");
         }
 
+        //Todo: AngularJS'ify
+        function lowerPanel_setChoice(uid, choice, old_choice) {
+            document.getElementById('uid').value = uid;
+            document.getElementById('hischoice').value = choice;
+            document.getElementById('oldchoice').value = old_choice;
+
+        }
+
         //Called on click of the button. Packages a Stomp object. Uses json for intermediate operations.
         function sendChoice() {
             var uid = document.getElementById('uid').value; //html field id='name'
