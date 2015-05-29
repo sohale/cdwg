@@ -633,3 +633,18 @@ Contents layout after mobile screen rotation.
 
 fixme:
 Still downloads [two versions of angularJS] from CDN. (See network panel).
+
+
+fixme:
+Firefox:
+This site makes use of a SHA-1 Certificate; it's recommended you use certificates with signature algorithms that use hash functions stronger than SHA-1.
+[Learn More]
+cleardot.gif
+https://developer.mozilla.org/en-US/docs/Security/Weak_Signature_Algorithm
+
+todo: Use colours for buttons. Same colours for bar graphs.
+
+Left to be done for the first phase:
+- Need a predefined graph (all-to-all),
+- needs to save the choices (a database).
+- "Game can be played in a test setting."
