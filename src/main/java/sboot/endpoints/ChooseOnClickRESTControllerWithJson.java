@@ -50,7 +50,7 @@ public class ChooseOnClickRESTControllerWithJson {
     {
         System.out.println("chosen by the button=" + this.timer);
         ZonedDateTime ts = timer.getNow();
-        log.info("old_choice=+"+old_choice+"  class="+old_choice.getClass()));
+        log.info("old_choice=+"+old_choice+"  class="+(old_choice==null?old_choice:old_choice.getClass()));
         log.info(String.format("User '%1$s' chose %2$s at %3$s (old choice = %1$s)", uid + "", choice + "", ts + "", old_choice));
 
         UserState u = this.gameModel.getUserState(uid);
