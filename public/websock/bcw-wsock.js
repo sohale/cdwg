@@ -91,9 +91,12 @@
             var p = document.createElement('p');
             p.style.wordWrap = 'break-word';
             //p.appendChild(document.createTextNode(change_obj_json));
-            p.appendChild(document.createTextNode("user "+change_obj_json.uid + " chose "+change_obj_json.new_choice +" (formerly "+change_obj_json.old_choice+")" ));
+            p.appendChild(document.createTextNode("user "+change_obj_json.uid + " chose "+change_obj_json.new_choice +" (old"+change_obj_json.old_choice+") "+Math.floor(Math.random()*10000)));
             //todo: change field names
-            response.appendChild(p);
+            //response.appendChild(p);  //insert at end
+            response.insertBefore(p, response.childNodes[0]); //insert in beginning
+
+
         }
 
 function initial_reconnect() {

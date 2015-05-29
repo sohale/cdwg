@@ -36,15 +36,17 @@ Has buttons too.-->
 
 </head>
 
-<body ng-app="my-usestate-angjs-module" onload="initial_reconnect()"  style="border-style:solid;border: solid 1px;">
+<body ng-app="my-usestate-angjs-module" onload="initial_reconnect()"  style="border-style:solid;border: solid 1px; border-color:#fff4f4;">
 <!-- (todo:) The <body> is marked as ng-app="hello" which means we need to define a JavaScript "module" (not a function) that Angular will recognise as an application called "hello". -->
 <!--
 Although "initial_reconnect()" is not in the module "my-usestate-angjs-module" but it still works.
 Because "onload" is non-AngularJS.
 -->
 <div class="container" align="center">
-    <div class="page-header"> <!-- not necessary -->
-        <h3>Bistable Crowd</h3>
+    <!-- large gap here-->
+    <div> <!--  class="page-header"   not necessary -->
+        <!-- some gap here-->
+        <h4>Bistable Crowd</h4>
     </div>
     <!-- <div ng-controller="YourStateJs" ng-cloak class="ng-cloak"> -->
     <div ng-controller="getYourStateJs_" ng-cloak class="ng-cloak">
@@ -55,7 +57,7 @@ Because "onload" is non-AngularJS.
         <!-- "ng-cloak" is not a bootstrap css. It belongs to AngularJS-->
         <!-- hello.js    use UserStateJs  and YourStateJs-->
         <p>User: {{userstate.publicName}} [uid:7] Chose:
-            <span class="label label-primary">{{userstate.lastChoice}}</span> {{userstate.lastTimeSetAgo}}.
+            <big><big><span class="label label-primary">{{userstate.lastChoice}}</span></big></big> {{userstate.lastTimeSetAgo}}.
             Last seen: N/A. [present: {{userstate.onAppScreen}}] [{{userstate.debugText}}]</p>
         <!------ Buttons ------>
         <p>
@@ -142,7 +144,7 @@ Because "onload" is non-AngularJS.
                     <div class="col-xs-2">
                           <span class="input-group-btn ">
                           <button id="sendChoice" onclick="sendChoice();"
-                                  class="btn btn-default" type="button"
+                                  class="btn btn-default btn-lg" type="button"
                                   >Broadcast</button>
                     </span>
                     </div>

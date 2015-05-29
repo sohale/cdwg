@@ -43,7 +43,7 @@ public class BcwWebsockEndpoint {
     public BcwChangeMessageJson changed(BcwChangeMessageStomp message) throws InterruptedException {
         log.info("state change report received on server-side. (stomp message=" + message + ")");
         //Thread.sleep(1000); //todo:
-        log.info("100 ms later...");
+        //log.info("1000 ms later...");
         return new BcwChangeMessageJson(message);
         //BcwChangeMessageStomp -> BcwChangeMessageJson
     }
