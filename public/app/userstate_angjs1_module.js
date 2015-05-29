@@ -2,7 +2,8 @@
 /* from public/js/appjs1.js */
 function getUserStateJs2($scope, $http) {
     ///*fixme: Warning: hardcoded constant*/
-    u = 'http://localhost:8080//userfullstate?uid=8';
+    //u = 'http://localhost:8080//userfullstate?uid=8';
+    u = '/userfullstate?uid=8';
     $http.get(u).
         success(function(data) {
             $scope.userstate = data;
@@ -16,7 +17,7 @@ function getUserStateJs2($scope, $http) {
 /* from public/js/appjs1.js */
 function getYourStateJs2($scope, $http) {
     //todo: (AngularJS) Use getUserStateJs with uid param.
-    u = 'http://localhost:8080//userfullstate?uid=7';
+    u = '/userfullstate?uid=7';
     $http.get(u).
         success(function(data) {
             $scope.userstate = data;

@@ -551,14 +551,15 @@ Slow and fast, REST and Websockets.
 [finished the day: 18:20; 28 May 2015]
 
 
+29 May 2015
 todo:
 - Finish Spring Boot T.V.
 - Finish Angular T.V.
-- Re-do those tutroials in Spring.io
+- Re-do those tutorials in Spring.io
 
 Roadmap:
 - d3.js or other graphs
-- Connect to two types of database (Cassndra + a Hibernate-based DB)
+- Connect to two types of database (Cassandra + a Hibernate-based DB)
 - neo4j graph connection
 - authentication users
 - "combining" multiple communication layers
@@ -568,4 +569,13 @@ Roadmap:
 - Other pages: join, join a graph/waiting room, main page, page transition,
 
 - Finishing frameworks
-- Whitelabel: eyeVote, pokr, etc.
+- Whitelabel: yVt, pkr, etc.
+
+
+
+http://192.168.1.92:8080/app/apppg2.html
+
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8080//userfullstate?uid=7. (Reason: CORS header 'Access-Control-Allow-Origin' missing). <unknown>
+
+29 May 2015
+Don't use localhost. [done]

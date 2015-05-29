@@ -54,11 +54,12 @@ public class BcwConfig {
         return msender;
     }
 
+    /*
     @Bean
     public DBMan1 some_name(){
         DBMan1 b=new DBMan1();
         System.out.println("main DBMan1 bean = "+b);
         return b;
     }
-
+    */
 }
