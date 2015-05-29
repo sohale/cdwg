@@ -1,12 +1,17 @@
-<!doctype html>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+<!-- <!doctype html><html> -->
 <!-- Single webpage app with no (least) transition betweenpages. Should show the user panel during the ame.
 As a view it represents UserState but more.
 Has buttons too.-->
 <!-- Moved to resources/public/* Based on uggestions in https://spring.io/guides/tutorials/spring-security-and-angular-js/ -->
-<html> <!-- <html ng-app> -->
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!-- <html>--> <!-- <html ng-app> -->
+<!-- <head> -->
+    <!-- <meta name="viewport" content="width=device-width"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, height=device-height">
 
     <title>Vote buttons + WebSocket</title>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -17,9 +22,9 @@ Has buttons too.-->
         [ng\:cloak], [ng-cloak], .ng-cloak {
         display: none !important;
         }
-    </style>
 
-    <style> .glyphicon-thumbs-up { cursor:pointer }</style>
+        .glyphicon-thumbs-up { cursor:pointer }
+    </style>
 
     <script src="/websock/downloaded/sockjs-0.3.4.js"></script>
     <script src="/websock/downloaded/stomp.js"></script>
@@ -31,24 +36,27 @@ Has buttons too.-->
 
 </head>
 
-<body ng-app="my-usestate-angjs-module" onload="initial_reconnect()">
+<body ng-app="my-usestate-angjs-module" onload="initial_reconnect()"  style="border-style:solid;border: solid 1px;">
 <!-- (todo:) The <body> is marked as ng-app="hello" which means we need to define a JavaScript "module" (not a function) that Angular will recognise as an application called "hello". -->
 <!--
 Although "initial_reconnect()" is not in the module "my-usestate-angjs-module" but it still works.
 Because "onload" is non-AngularJS.
 -->
-<div class="container">
+<div class="container" align="center">
     <div class="page-header"> <!-- not necessary -->
         <h3>Bistable Crowd</h3>
     </div>
     <!-- <div ng-controller="YourStateJs" ng-cloak class="ng-cloak"> -->
     <div ng-controller="getYourStateJs_" ng-cloak class="ng-cloak">
+        <div style="height: 10%; ">
+        <img src="/app/exclude/plaid_transp1.gif" style="height: 10% "/>
+        </div>
         <!-- ng-controller is a "controller", the one who fills-in the handlebars here-->
         <!-- "ng-cloak" is not a bootstrap css. It belongs to AngularJS-->
         <!-- hello.js    use UserStateJs  and YourStateJs-->
         <p>User: {{userstate.publicName}} [uid:7] Chose:
-            <span class="label label-primary">{{userstate.lastChoice}}</span> {{userstate.lastTimeSetAgo}}.</p>
-        <p>Last seen: N/A. [present: {{userstate.onAppScreen}}] [{{userstate.debugText}}]</p>
+            <span class="label label-primary">{{userstate.lastChoice}}</span> {{userstate.lastTimeSetAgo}}.
+            Last seen: N/A. [present: {{userstate.onAppScreen}}] [{{userstate.debugText}}]</p>
         <!------ Buttons ------>
         <p>
             <!-- <a href="/choose?uid=7&choice=1"> -->
@@ -72,23 +80,22 @@ Because "onload" is non-AngularJS.
 
 
     <!-- todo:  Don't use Controllers. Just use directives instead.-->
-    <div ng-controller="getUserStateJs_" ng-cloak class="ng-cloak">
-        <p>User: {{userstate.publicName}} [uid:8] Chose: {{userstate.lastChoice}}.</p>
-        <p>When? {{userstate.lastTimeSet}}, Last seen: N/A. [present: {{userstate.onAppScreen}}] [{{userstate.debugText}}].</p>
-    </div>
-</div>
-
-<hr/>
+    <div ng-controller="getUserStateJs_" ng-cloak class="ng-cloak"
+                     > <!-- style="border-style:solid;border: solid 1px;"-->
+        <p><small><small>User: {{userstate.publicName}} [uid:8] Chose: {{userstate.lastChoice}}.
+        When? {{userstate.lastTimeSet}}, Last seen: N/A. [present: {{userstate.onAppScreen}}] [{{userstate.debugText}}].</small></small>
+        </p></div></div>
+<!-- <hr /> -->
 <noscript><h2 style="color: #ff0000">Websocket capability disabled because Seems your browser doesn't support Javascript.</h2></noscript>
-<div ng-cloak class="ng-cloak">
+<div ng-cloak class="ng-cloak" align="center">
     <div>
         <button id="connect" onclick="connect();"
-                class="btn btn-default btn-lg">
+                class="btn btn-default btn-sm">
             Connect
         </button>
         <button id="disconnect" disabled="disabled" onclick="disconnect();"
-                class="btn btn-default btn-lg"
-                >Disconnect</button>
+                class="btn btn-default btn-sm"
+                >Disconnect Web Sockets </button>
     </div>
     <div id="conversationDiv">
 
@@ -130,7 +137,7 @@ Because "onload" is non-AngularJS.
                         <input type="text" id="hischoice" value="1" placeholder="New choice" class="form-control"/>
                     </div>
                     <div class="col-xs-1">
-                        <input type="text" id="oldchoice" value="2" placeholder="Old choice" class="form-control"/>
+                        <input type="text" id="oldchoice" value="2" placeholder="Old choice" class="form-control" style="margin:0px"/>
                     </div>
                     <div class="col-xs-2">
                           <span class="input-group-btn ">
@@ -157,22 +164,4 @@ Because "onload" is non-AngularJS.
 <!-- <script src="/js/appjs1.js"></script> -->
 <!-- <script src="js/YourStateJs.js"></script> -->
 
-</body>
-</html>
-
-<!--
-{
-   "lastTimeSet":"null",
-   "privateName":"Jack",
-   "onAppScreen":false,
-   "publicName":"Jack"
-}
--->
-
-
-
-
-<!--
-GET http://localhost:8080/hello/info 404 (Not Found)AbstractXHRObject._start @ sockjs-0.3.4.js:807(anonymous function) @ sockjs-0.3.4.js:841
-stomp.js:145 Whoops! Lost connection to undefined
--->
+</body></html>

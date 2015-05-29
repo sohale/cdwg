@@ -573,9 +573,63 @@ Roadmap:
 
 
 
-http://192.168.1.92:8080/app/apppg2.html
-
-Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8080//userfullstate?uid=7. (Reason: CORS header 'Access-Control-Allow-Origin' missing). <unknown>
 
 29 May 2015
+
+http://192.168.1.92:8080/app/apppg2.html
+caused:
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8080//userfullstate?uid=7. (Reason: CORS header 'Access-Control-Allow-Origin' missing). <unknown>
+
 Don't use localhost. [done]
+
+todo:
+remove focus highlight because it's a mobile web app (no use of keyboard?).
+repeated tdo: highlight the choice (AngularJS style). Three sources of highlight: 1-Locally, 2-WebSocket reverberation. 3- Server reverb.
+todo:
+allow multiple clicks on mobile.
+todo:
+Disable dictionary, etc on mobile (Safari mobile). Similar UX tests on other mobile browsers and on Android,
+todo:
+keyboard shortcuts for desktop use.
+
+todo:
+screen wiggles
+Very useful tag to debug CSS:
+style="border-style:solid; border-color:red;"
+
+viewport problem
+
+.e #viewport {
+    margin: 0 auto;
+    max-width: 600px;
+}
+#page {
+    position: relative;
+}
+
+Image size:
+Should it be adjustable for each user?
+
+Bootstrap: Navbar brand image
+
+fixme:
+it does not show the same content after refreshing. (Although it keeps the selection). --> Two types of json records. Why two endpoints are uesd?
+
+fixme:
+Sometime the automatic connect does not work.
+Solution: reconnect heartbeat.
+
+fixme:
+Delay in Websocket communication.
+
+todo:
+Test if the broadcast works after leaving the App screen.
+solution: Detect if it's disconnected (low latency).
+
+default choice in the broadcast panel. (Will be fixed after Angular-ization)
+
+fixme:
+Contents layout after mobile screen rotation.
+
+fixme:
+Still downloads [two versions of angularJS] from CDN. (See network panel).

@@ -42,7 +42,7 @@ public class BcwWebsockEndpoint {
     @SendTo(STOMPSUBSCR_FULL) //subscription destination
     public BcwChangeMessageJson changed(BcwChangeMessageStomp message) throws InterruptedException {
         log.info("state change report received on server-side. (stomp message=" + message + ")");
-        Thread.sleep(1000);
+        //Thread.sleep(1000); //todo:
         log.info("100 ms later...");
         return new BcwChangeMessageJson(message);
         //BcwChangeMessageStomp -> BcwChangeMessageJson
